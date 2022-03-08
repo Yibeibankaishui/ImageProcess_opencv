@@ -2,8 +2,8 @@
 
 
 cv::Mat ColorReduction(const cv::Mat & img_input, int ratio){
-    int width = img_input.cols;
-    int height = img_input.rows;
+    const int width = img_input.cols;
+    const int height = img_input.rows;
 
     cv::Mat img_output = cv::Mat::zeros(height, width, CV_8UC3);
 
