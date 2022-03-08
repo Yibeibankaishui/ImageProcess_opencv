@@ -17,13 +17,14 @@ class Dithering{
         Dithering(){}
         ~Dithering(){}
     
-        cv::Mat FloydSteinbergDithering(const cv::Mat & input_img, int ratio);
+        cv::Mat FloydSteinbergDithering(const cv::Mat & input_img, int bits);
 
         cv::Mat ColorReduction(const cv::Mat & img_input, int bits);
 
         cv::Vec3b FindClosestColor(const cv::Vec3b & oldpixel, int bits);
 
-        cv::Vec3b PixelAdd(const cv::Vec3b & pixel_1, const cv::Vec3b & pixel_2);
+        cv::Mat MinimizedAverageError(const cv::Mat & input_img, int bits);
+
 };
 
 
