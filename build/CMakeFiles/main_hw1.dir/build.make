@@ -92,8 +92,8 @@ main_hw1_EXTERNAL_OBJECTS =
 
 ../bin/main_hw1: CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o
 ../bin/main_hw1: CMakeFiles/main_hw1.dir/build.make
-../bin/main_hw1: ../bin/libColorReduction.a
-../bin/main_hw1: ../bin/libDithering.a
+../bin/main_hw1: ../lib/libColorReduction.a
+../bin/main_hw1: ../lib/libDithering.a
 ../bin/main_hw1: /usr/local/lib/libopencv_dnn.3.4.16.dylib
 ../bin/main_hw1: /usr/local/lib/libopencv_highgui.3.4.16.dylib
 ../bin/main_hw1: /usr/local/lib/libopencv_ml.3.4.16.dylib

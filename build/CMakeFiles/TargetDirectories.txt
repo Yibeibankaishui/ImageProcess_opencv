@@ -1,5 +1,6 @@
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/ColorReduction.dir
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/Dithering.dir
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/main_hw1.dir
+/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/ImageSmoothing.dir
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/edit_cache.dir
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/rebuild_cache.dir

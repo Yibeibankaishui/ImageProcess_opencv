@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../bin/libColorReduction.a"
-  "../bin/libColorReduction.pdb"
+  "../lib/libColorReduction.a"
+  "../lib/libColorReduction.pdb"
   "CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o"
   "CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o.d"
 )

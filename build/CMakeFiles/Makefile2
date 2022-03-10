@@ -66,6 +66,7 @@ CMAKE_BINARY_DIR = /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build
 all: CMakeFiles/ColorReduction.dir/all
 all: CMakeFiles/Dithering.dir/all
 all: CMakeFiles/main_hw1.dir/all
+all: CMakeFiles/ImageSmoothing.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,6 +77,7 @@ preinstall:
 clean: CMakeFiles/ColorReduction.dir/clean
 clean: CMakeFiles/Dithering.dir/clean
 clean: CMakeFiles/main_hw1.dir/clean
+clean: CMakeFiles/ImageSmoothing.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -134,11 +136,11 @@ CMakeFiles/Dithering.dir/clean:
 # Target rules for target CMakeFiles/main_hw1.dir
 
 # All Build rule for target.
-CMakeFiles/main_hw1.dir/all: CMakeFiles/Dithering.dir/all
 CMakeFiles/main_hw1.dir/all: CMakeFiles/ColorReduction.dir/all
+CMakeFiles/main_hw1.dir/all: CMakeFiles/Dithering.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw1.dir/build.make CMakeFiles/main_hw1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw1.dir/build.make CMakeFiles/main_hw1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles --progress-num=5,6 "Built target main_hw1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles --progress-num=7,8 "Built target main_hw1"
 .PHONY : CMakeFiles/main_hw1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -156,6 +158,32 @@ main_hw1: CMakeFiles/main_hw1.dir/rule
 CMakeFiles/main_hw1.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw1.dir/build.make CMakeFiles/main_hw1.dir/clean
 .PHONY : CMakeFiles/main_hw1.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ImageSmoothing.dir
+
+# All Build rule for target.
+CMakeFiles/ImageSmoothing.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageSmoothing.dir/build.make CMakeFiles/ImageSmoothing.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageSmoothing.dir/build.make CMakeFiles/ImageSmoothing.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles --progress-num=5,6 "Built target ImageSmoothing"
+.PHONY : CMakeFiles/ImageSmoothing.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ImageSmoothing.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ImageSmoothing.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles 0
+.PHONY : CMakeFiles/ImageSmoothing.dir/rule
+
+# Convenience name for target.
+ImageSmoothing: CMakeFiles/ImageSmoothing.dir/rule
+.PHONY : ImageSmoothing
+
+# clean rule for target.
+CMakeFiles/ImageSmoothing.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageSmoothing.dir/build.make CMakeFiles/ImageSmoothing.dir/clean
+.PHONY : CMakeFiles/ImageSmoothing.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

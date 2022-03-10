@@ -155,6 +155,19 @@ main_hw1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw1.dir/build.make CMakeFiles/main_hw1.dir/build
 .PHONY : main_hw1/fast
 
+#=============================================================================
+# Target rules for targets named ImageSmoothing
+
+# Build rule for target.
+ImageSmoothing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ImageSmoothing
+.PHONY : ImageSmoothing
+
+# fast build rule for target.
+ImageSmoothing/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageSmoothing.dir/build.make CMakeFiles/ImageSmoothing.dir/build
+.PHONY : ImageSmoothing/fast
+
 src/ColorReduction.o: src/ColorReduction.cpp.o
 .PHONY : src/ColorReduction.o
 
@@ -203,6 +216,30 @@ src/Dithering.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Dithering.dir/build.make CMakeFiles/Dithering.dir/src/Dithering.cpp.s
 .PHONY : src/Dithering.cpp.s
 
+src/ImageSmoothing.o: src/ImageSmoothing.cpp.o
+.PHONY : src/ImageSmoothing.o
+
+# target to build an object file
+src/ImageSmoothing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageSmoothing.dir/build.make CMakeFiles/ImageSmoothing.dir/src/ImageSmoothing.cpp.o
+.PHONY : src/ImageSmoothing.cpp.o
+
+src/ImageSmoothing.i: src/ImageSmoothing.cpp.i
+.PHONY : src/ImageSmoothing.i
+
+# target to preprocess a source file
+src/ImageSmoothing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageSmoothing.dir/build.make CMakeFiles/ImageSmoothing.dir/src/ImageSmoothing.cpp.i
+.PHONY : src/ImageSmoothing.cpp.i
+
+src/ImageSmoothing.s: src/ImageSmoothing.cpp.s
+.PHONY : src/ImageSmoothing.s
+
+# target to generate assembly for a file
+src/ImageSmoothing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageSmoothing.dir/build.make CMakeFiles/ImageSmoothing.dir/src/ImageSmoothing.cpp.s
+.PHONY : src/ImageSmoothing.cpp.s
+
 src/main_hw1.o: src/main_hw1.cpp.o
 .PHONY : src/main_hw1.o
 
@@ -237,6 +274,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ColorReduction"
 	@echo "... Dithering"
+	@echo "... ImageSmoothing"
 	@echo "... main_hw1"
 	@echo "... src/ColorReduction.o"
 	@echo "... src/ColorReduction.i"
@@ -244,6 +282,9 @@ help:
 	@echo "... src/Dithering.o"
 	@echo "... src/Dithering.i"
 	@echo "... src/Dithering.s"
+	@echo "... src/ImageSmoothing.o"
+	@echo "... src/ImageSmoothing.i"
+	@echo "... src/ImageSmoothing.s"
 	@echo "... src/main_hw1.o"
 	@echo "... src/main_hw1.i"
 	@echo "... src/main_hw1.s"

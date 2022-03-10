@@ -19,14 +19,9 @@ int main(int argc, char **argv){
     }
 
     Dithering dither;
-
     // pipeline processing the input image
     cv::Mat output_image;
     cv::Mat output_image_2;
-    // the second parameter is the ratio of color reduction
-    // int down_ratio = stoi(argv[2]);
-    // output_image = dither.ColorReduction(input_image, 16);
-    // cout << input_image.at<cv::Vec3b>(6001,4001) << endl;
     output_image = dither.FloydSteinbergDithering(input_image, downbits);
     output_image_2 = dither.ColorReduction(input_image, downbits);
     // show result image
@@ -36,20 +31,20 @@ int main(int argc, char **argv){
     cv::imshow("imageOUT", output_image);
     cv::namedWindow("out2",CV_WINDOW_AUTOSIZE);
     cv::imshow("imageOUT2", output_image_2);
-    cv::imwrite("../images/catout.JPEG", output_image);
-    // cv::Mat BGR[3],BGRin[3];
-    // cv::split(output_image, BGR);
+    cv::imwrite("../images/out.BMP", output_image);
+    cv::Mat BGR[3];
+    // cv::Mat BGRin[3];
+    cv::split(output_image, BGR);
     // cv::split(input_image, BGRin);
     // cv::namedWindow("Bin",CV_WINDOW_AUTOSIZE);
     // cv::imshow("Bin", BGRin[0]);
-    // cv::namedWindow("B",CV_WINDOW_AUTOSIZE);
-    // cv::imshow("B", BGR[0]);
-    // cv::namedWindow("G",CV_WINDOW_AUTOSIZE);
-    // cv::imshow("G", BGR[1]);
-    // cv::namedWindow("R",CV_WINDOW_AUTOSIZE);
-    // cv::imshow("R", BGR[2]);
+    cv::namedWindow("B",CV_WINDOW_AUTOSIZE);
+    cv::imshow("B", BGR[0]);
+    cv::namedWindow("G",CV_WINDOW_AUTOSIZE);
+    cv::imshow("G", BGR[1]);
+    cv::namedWindow("R",CV_WINDOW_AUTOSIZE);
+    cv::imshow("R", BGR[2]);
     cv::waitKey(0);
-
 
     return 0;
 }

@@ -11,21 +11,21 @@ cv::Vec3b Dithering::FindClosestColor(const cv::Vec3b & oldpixel, int bits){
     switch(bits){
         case 16:
         // BGR: 5 6 5
-            newpixel[0] = oldpixel[0] & (0xFF<<(8-5));
-            newpixel[1] = oldpixel[1] & (0xFF<<(8-6));
-            newpixel[2] = oldpixel[2] & (0xFF<<(8-5));        
+            newpixel[0] = oldpixel[0] & (0xFF<<(8-5)) + (0xFF>>6);
+            newpixel[1] = oldpixel[1] & (0xFF<<(8-6)) + (0xFF>>7);
+            newpixel[2] = oldpixel[2] & (0xFF<<(8-5)) + (0xFF>>6);        
         case 8:
         // BGR: 2 3 3
-            newpixel[0] = oldpixel[0] & (0xFF<<(8-2));
-            newpixel[1] = oldpixel[1] & (0xFF<<(8-3));
-            newpixel[2] = oldpixel[2] & (0xFF<<(8-3));
+            newpixel[0] = oldpixel[0] & (0xFF<<(8-2)) + (0xFF>>3);
+            newpixel[1] = oldpixel[1] & (0xFF<<(8-3)) + (0xFF>>4);
+            newpixel[2] = oldpixel[2] & (0xFF<<(8-3)) + (0xFF>>4);
         break;
         case 4:
         // BGR: 1 2 1
-            newpixel[0] = oldpixel[0] & (0xFF<<(8-1));
+            newpixel[0] = oldpixel[0] & (0xFF<<(8-1)) + (0xFF>>2);
             // newpixel[0] = (oldpixel[0] < 127) ? 0 : 255;
-            newpixel[1] = oldpixel[1] & (0xFF<<(8-2));
-            newpixel[2] = oldpixel[2] & (0xFF<<(8-1));
+            newpixel[1] = oldpixel[1] & (0xFF<<(8-2)) + (0xFF>>3);
+            newpixel[2] = oldpixel[2] & (0xFF<<(8-1)) + (0xFF>>2);
             // newpixel[2] = (oldpixel[2] < 127) ? 0 : 255;
         break;
     }

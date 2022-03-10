@@ -16,7 +16,7 @@ class Dithering{
     public:
         Dithering(){}
         ~Dithering(){}
-    
+            
         cv::Mat FloydSteinbergDithering(const cv::Mat & input_img, int bits);
 
         cv::Mat ColorReduction(const cv::Mat & img_input, int bits);
@@ -24,6 +24,10 @@ class Dithering{
         cv::Vec3b FindClosestColor(const cv::Vec3b & oldpixel, int bits);
 
         cv::Mat MinimizedAverageError(const cv::Mat & input_img, int bits);
+
+        cv::Mat RandomDithering(const cv::Mat & input_img, int bits);
+
+        cv::Mat OrderedDithering(const cv::Mat & input_img, int bits);
 
 };
 

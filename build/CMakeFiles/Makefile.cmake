@@ -56,4 +56,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ColorReduction.dir/DependInfo.cmake"
   "CMakeFiles/Dithering.dir/DependInfo.cmake"
   "CMakeFiles/main_hw1.dir/DependInfo.cmake"
+  "CMakeFiles/ImageSmoothing.dir/DependInfo.cmake"
   )

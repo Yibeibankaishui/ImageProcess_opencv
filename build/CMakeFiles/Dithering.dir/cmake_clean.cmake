@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../bin/libDithering.a"
-  "../bin/libDithering.pdb"
+  "../lib/libDithering.a"
+  "../lib/libDithering.pdb"
   "CMakeFiles/Dithering.dir/src/Dithering.cpp.o"
   "CMakeFiles/Dithering.dir/src/Dithering.cpp.o.d"
 )
