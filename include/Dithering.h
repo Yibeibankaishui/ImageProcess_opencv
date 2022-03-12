@@ -8,10 +8,7 @@
 
 // 定义Dithering接口
 
-// Thresholding
-// Random
-// Ordered
-// Error-diffusion: Floyd-Steinberg,
+// 下面三个算法未实现
 class Dithering{
     public:
         Dithering(){}

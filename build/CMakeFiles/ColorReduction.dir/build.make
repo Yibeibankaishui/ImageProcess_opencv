@@ -73,15 +73,15 @@ CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o: CMakeFiles/ColorReductio
 CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o: ../src/ColorReduction.cpp
 CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o: CMakeFiles/ColorReduction.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o -MF CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o.d -o CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o -MF CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o.d -o CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp
 
 CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp > CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp > CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.i
 
 CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp -o CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp -o CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.s
 
 # Object files for target ColorReduction
 ColorReduction_OBJECTS = \

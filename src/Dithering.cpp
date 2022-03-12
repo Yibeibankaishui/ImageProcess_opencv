@@ -23,10 +23,8 @@ cv::Vec3b Dithering::FindClosestColor(const cv::Vec3b & oldpixel, int bits){
         case 4:
         // BGR: 1 2 1
             newpixel[0] = oldpixel[0] & (0xFF<<(8-1)) + (0xFF>>2);
-            // newpixel[0] = (oldpixel[0] < 127) ? 0 : 255;
             newpixel[1] = oldpixel[1] & (0xFF<<(8-2)) + (0xFF>>3);
             newpixel[2] = oldpixel[2] & (0xFF<<(8-1)) + (0xFF>>2);
-            // newpixel[2] = (oldpixel[2] < 127) ? 0 : 255;
         break;
     }
     return newpixel;
@@ -56,7 +54,7 @@ cv::Mat Dithering::FloydSteinbergDithering(const cv::Mat & img_input, int bits){
     const int width = img_output.cols;
     const int height = img_output.rows;
 
-    // cout << width << " " << height << endl;
+    cout << width << " " << height << endl;
     cv::Vec3b oldpixel;
     cv::Vec3b newpixel;
     cv::Vec3b err;
@@ -66,21 +64,10 @@ cv::Mat Dithering::FloydSteinbergDithering(const cv::Mat & img_input, int bits){
             oldpixel = img_output.at<cv::Vec3b>(j,i);
             newpixel = FindClosestColor(oldpixel, bits);
             img_output.at<cv::Vec3b>(j, i) = newpixel;
-            // if(j==i){
-            //     cout << oldpixel << "-----" << newpixel << endl;
-            // }
             err = oldpixel - newpixel;
-            // cout << err;
-            // for (int c = 0; c < 3; c++){
-            //     img_output.at<cv::Vec3b>(j, i + 1)[c] += (7/16) * err[c];
-            //     img_output.at<cv::Vec3b>(j + 1, i - 1)[c] += (3/16) * err[c];
-            //     img_output.at<cv::Vec3b>(j + 1, i)[c] += (5/16) * err[c];
-            //     img_output.at<cv::Vec3b>(j + 1, i + 1)[c] += (1/16) * err[c];
-            // }
-            //  改成float的算法
+            // 抖动处理
             if(i + 1 < width)
                 img_output.at<cv::Vec3b>(j, i + 1) += (7.0/16.0) * err;
-                // img_output.at<cv::Vec3b>(j, i + 1) = PixelAdd((7.0/16.0) * err, img_output.at<cv::Vec3b>(j, i + 1));
             if((j + 1 < height) && (i > 0))
                 img_output.at<cv::Vec3b>(j + 1, i - 1) += (3.0/16.0) * err;
             if(j + 1 < height)
@@ -93,7 +80,7 @@ cv::Mat Dithering::FloydSteinbergDithering(const cv::Mat & img_input, int bits){
     return img_output;
 }
 
-
+// 不进行抖动，仅减色
 cv::Mat Dithering::ColorReduction(const cv::Mat & img_input, int bits){
     cv::Mat img_output = img_input.clone();
 

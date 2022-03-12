@@ -73,15 +73,15 @@ CMakeFiles/Dithering.dir/src/Dithering.cpp.o: CMakeFiles/Dithering.dir/flags.mak
 CMakeFiles/Dithering.dir/src/Dithering.cpp.o: ../src/Dithering.cpp
 CMakeFiles/Dithering.dir/src/Dithering.cpp.o: CMakeFiles/Dithering.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Dithering.dir/src/Dithering.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Dithering.dir/src/Dithering.cpp.o -MF CMakeFiles/Dithering.dir/src/Dithering.cpp.o.d -o CMakeFiles/Dithering.dir/src/Dithering.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Dithering.dir/src/Dithering.cpp.o -MF CMakeFiles/Dithering.dir/src/Dithering.cpp.o.d -o CMakeFiles/Dithering.dir/src/Dithering.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp
 
 CMakeFiles/Dithering.dir/src/Dithering.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Dithering.dir/src/Dithering.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp > CMakeFiles/Dithering.dir/src/Dithering.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp > CMakeFiles/Dithering.dir/src/Dithering.cpp.i
 
 CMakeFiles/Dithering.dir/src/Dithering.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Dithering.dir/src/Dithering.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp -o CMakeFiles/Dithering.dir/src/Dithering.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp -o CMakeFiles/Dithering.dir/src/Dithering.cpp.s
 
 # Object files for target Dithering
 Dithering_OBJECTS = \

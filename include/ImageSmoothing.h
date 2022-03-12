@@ -14,6 +14,8 @@ namespace ImageSmoothing{
     cv::Mat AverageFilter_SumCol(const cv::Mat & input_img, int kernel_w = 3, int kernel_h = 3);
     // 基于积分图的均值滤波器
     cv::Mat AverageFilter_SumImg(const cv::Mat & input_img, int kernel_w = 3, int kernel_h = 3);
+    // 计算积分图
+    cv::Mat CalculateSumImg(const cv::Mat & input_img);
 }
 
 #endif

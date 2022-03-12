@@ -73,15 +73,15 @@ CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o: CMakeFiles/main_hw1.dir/flags.make
 CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o: ../src/main_hw1.cpp
 CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o: CMakeFiles/main_hw1.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o -MF CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o.d -o CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o -MF CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o.d -o CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp
 
 CMakeFiles/main_hw1.dir/src/main_hw1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main_hw1.dir/src/main_hw1.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp > CMakeFiles/main_hw1.dir/src/main_hw1.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp > CMakeFiles/main_hw1.dir/src/main_hw1.cpp.i
 
 CMakeFiles/main_hw1.dir/src/main_hw1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main_hw1.dir/src/main_hw1.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp -o CMakeFiles/main_hw1.dir/src/main_hw1.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp -o CMakeFiles/main_hw1.dir/src/main_hw1.cpp.s
 
 # Object files for target main_hw1
 main_hw1_OBJECTS = \
