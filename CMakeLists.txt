@@ -28,3 +28,6 @@ target_link_libraries(main_hw1  ColorReduction
 #   图像平滑
 add_library(ImageSmoothing src/ImageSmoothing.cpp)
 target_link_libraries(ImageSmoothing ${OpenCV_LIBS})
+
+
+

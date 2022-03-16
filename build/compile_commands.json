@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
+  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp",
+  "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp"
+},
+{
+  "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
+  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/Dithering.dir/src/Dithering.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp",
+  "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp"
+},
+{
+  "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
+  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp",
+  "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp"
+},
+{
+  "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
+  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/ImageSmoothing.dir/src/ImageSmoothing.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ImageSmoothing.cpp",
+  "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ImageSmoothing.cpp"
+}
+]
