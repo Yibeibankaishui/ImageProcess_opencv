@@ -76,6 +76,7 @@ namespace undistort{
     PointMap::PointMap(const std::vector<cv::Point2f> & points, cv::Mat *img, int s){
         size = s;
         image = img;
+        std::vector<PointMap::Node> NodeSearch;
         //  深拷贝
         std::vector<cv::Point2f> points_copy(points);
         //  先确定中心点
@@ -84,12 +85,13 @@ namespace undistort{
         cv::Point2f centerPoint = FindClosestPoint(center_img, points_copy, 1);
         centerNode = new Node(0, 0, centerPoint);
         //  建立NodeVec
-        NodeVec.push_back(centerNode);
+        NodeVec.push_back(*centerNode);
         for (int x = -s; x < s; x++){
             for (int y = -s; y < s; y++){
                 //  建立带索引的Node
                 curNode = new Node(x, y);
                 //  设置相邻Node
+
             }
         }
 
@@ -116,10 +118,13 @@ namespace undistort{
         return distance;
     }
 
+    // find the closest point
     cv::Point2f FindClosestPoint(const cv::Point2f & pt, std::vector<cv::Point2f> & points, int del){
+        
         cv::Point2f res;
         double dis;
         double minDis = 999999;
+        
         auto itr_del = points.begin();
         for (auto itr = points.begin(); itr != points.end(); itr++){
             dis = PointDistance(pt, *itr);
@@ -157,5 +162,16 @@ namespace undistort{
         return 0;
     }
 
+    //  输入points向量和一个point，找最近点且形成连接
+    void FormNeighborPoints(PointMap::Node & node, std::vector<cv::Point2f> & points){
+        FindClosestPoint();
+        AssertOrient();
+
+    }
+
+    //  删除points vector中指定元素
+    void DeletePoint(std::vector<cv::Point2f> & points){
+        
+    }
 
 }

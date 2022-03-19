@@ -45,6 +45,7 @@ namespace undistort{
             struct Node
             {
                 cv::Point2f data;
+                //  二维索引（可以不需要？）
                 int index_x;
                 int index_y;
 
@@ -54,6 +55,9 @@ namespace undistort{
                 Node *right;
 
                 Node(int x, int y, const cv::Point2f & pt = cv::Point2f(0,0), Node *pu = nullptr, Node *pd = nullptr, Node *pl = nullptr, Node *pr = nullptr): index_x{x}, index_y{y}, data{pt}, up{pu}, down{pd}, left{pl}, right{pr} { }
+
+                bool empty() {return (data == cv::Point2f(0,0));}
+                bool complete() {return ((up!=nullptr) && (down!=nullptr) && (left!=nullptr) && (right!=nullptr));}
             };
             //  指向中心点的指针
             Node * centerNode;
@@ -77,6 +81,11 @@ namespace undistort{
     double CalculateAngle(const cv::Point2f & pt_from, const cv::Point2f & pt_to);
 
     int AssertOrient(const cv::Point2f & pt_from, const cv::Point2f & pt_to, double delta=0.1745);
+
+    //  输入points向量和一个point，找最近点且形成连接
+    void FormNeighborPoints(PointMap::Node & node, std::vector<cv::Point2f> & points);
+
+    //  删除points vector中指定元素
 
     void ConstructPointMap();
 }
