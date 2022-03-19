@@ -86,6 +86,7 @@ namespace undistort{
     void FormNeighborPoints(PointMap::Node & node, std::vector<cv::Point2f> & points);
 
     //  删除points vector中指定元素
+    void DeletePoint(std::vector<cv::Point2f> & points);
 
     void ConstructPointMap();
 }
