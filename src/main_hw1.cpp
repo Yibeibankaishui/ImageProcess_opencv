@@ -4,7 +4,7 @@
 
 using namespace std;
 
-
+// 彩色图像抖动处理
 int main(int argc, char **argv){
 
     // read an image

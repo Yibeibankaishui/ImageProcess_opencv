@@ -20,14 +20,22 @@ target_link_libraries(ColorReduction ${OpenCV_LIBS})
 add_library(Dithering src/Dithering.cpp)
 target_link_libraries(Dithering ${OpenCV_LIBS})
 
+add_library(Undistort src/Undistort.cpp)
+target_link_libraries(Undistort ${OpenCV_LIBS})
+
 add_executable(main_hw1 src/main_hw1.cpp)
 target_link_libraries(main_hw1  ColorReduction
                                 Dithering
                                 ${OpenCV_LIBS})
 
+add_executable(main_hw2 src/main_hw2.cpp)
+target_link_libraries(main_hw2 Undistort
+                                ${OpenCV_LIBS})
+
 #   图像平滑
 add_library(ImageSmoothing src/ImageSmoothing.cpp)
 target_link_libraries(ImageSmoothing ${OpenCV_LIBS})
+
 
 
 

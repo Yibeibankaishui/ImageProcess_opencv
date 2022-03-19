@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libUndistort.a CMakeFiles/Undistort.dir/src/Undistort.cpp.o
+/usr/bin/ranlib ../lib/libUndistort.a

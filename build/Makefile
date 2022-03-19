@@ -143,6 +143,19 @@ Dithering/fast:
 .PHONY : Dithering/fast
 
 #=============================================================================
+# Target rules for targets named Undistort
+
+# Build rule for target.
+Undistort: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Undistort
+.PHONY : Undistort
+
+# fast build rule for target.
+Undistort/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Undistort.dir/build.make CMakeFiles/Undistort.dir/build
+.PHONY : Undistort/fast
+
+#=============================================================================
 # Target rules for targets named main_hw1
 
 # Build rule for target.
@@ -154,6 +167,19 @@ main_hw1: cmake_check_build_system
 main_hw1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw1.dir/build.make CMakeFiles/main_hw1.dir/build
 .PHONY : main_hw1/fast
+
+#=============================================================================
+# Target rules for targets named main_hw2
+
+# Build rule for target.
+main_hw2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_hw2
+.PHONY : main_hw2
+
+# fast build rule for target.
+main_hw2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw2.dir/build.make CMakeFiles/main_hw2.dir/build
+.PHONY : main_hw2/fast
 
 #=============================================================================
 # Target rules for targets named ImageSmoothing
@@ -240,6 +266,30 @@ src/ImageSmoothing.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageSmoothing.dir/build.make CMakeFiles/ImageSmoothing.dir/src/ImageSmoothing.cpp.s
 .PHONY : src/ImageSmoothing.cpp.s
 
+src/Undistort.o: src/Undistort.cpp.o
+.PHONY : src/Undistort.o
+
+# target to build an object file
+src/Undistort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Undistort.dir/build.make CMakeFiles/Undistort.dir/src/Undistort.cpp.o
+.PHONY : src/Undistort.cpp.o
+
+src/Undistort.i: src/Undistort.cpp.i
+.PHONY : src/Undistort.i
+
+# target to preprocess a source file
+src/Undistort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Undistort.dir/build.make CMakeFiles/Undistort.dir/src/Undistort.cpp.i
+.PHONY : src/Undistort.cpp.i
+
+src/Undistort.s: src/Undistort.cpp.s
+.PHONY : src/Undistort.s
+
+# target to generate assembly for a file
+src/Undistort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Undistort.dir/build.make CMakeFiles/Undistort.dir/src/Undistort.cpp.s
+.PHONY : src/Undistort.cpp.s
+
 src/main_hw1.o: src/main_hw1.cpp.o
 .PHONY : src/main_hw1.o
 
@@ -264,6 +314,30 @@ src/main_hw1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw1.dir/build.make CMakeFiles/main_hw1.dir/src/main_hw1.cpp.s
 .PHONY : src/main_hw1.cpp.s
 
+src/main_hw2.o: src/main_hw2.cpp.o
+.PHONY : src/main_hw2.o
+
+# target to build an object file
+src/main_hw2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw2.dir/build.make CMakeFiles/main_hw2.dir/src/main_hw2.cpp.o
+.PHONY : src/main_hw2.cpp.o
+
+src/main_hw2.i: src/main_hw2.cpp.i
+.PHONY : src/main_hw2.i
+
+# target to preprocess a source file
+src/main_hw2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw2.dir/build.make CMakeFiles/main_hw2.dir/src/main_hw2.cpp.i
+.PHONY : src/main_hw2.cpp.i
+
+src/main_hw2.s: src/main_hw2.cpp.s
+.PHONY : src/main_hw2.s
+
+# target to generate assembly for a file
+src/main_hw2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw2.dir/build.make CMakeFiles/main_hw2.dir/src/main_hw2.cpp.s
+.PHONY : src/main_hw2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -275,7 +349,9 @@ help:
 	@echo "... ColorReduction"
 	@echo "... Dithering"
 	@echo "... ImageSmoothing"
+	@echo "... Undistort"
 	@echo "... main_hw1"
+	@echo "... main_hw2"
 	@echo "... src/ColorReduction.o"
 	@echo "... src/ColorReduction.i"
 	@echo "... src/ColorReduction.s"
@@ -285,9 +361,15 @@ help:
 	@echo "... src/ImageSmoothing.o"
 	@echo "... src/ImageSmoothing.i"
 	@echo "... src/ImageSmoothing.s"
+	@echo "... src/Undistort.o"
+	@echo "... src/Undistort.i"
+	@echo "... src/Undistort.s"
 	@echo "... src/main_hw1.o"
 	@echo "... src/main_hw1.i"
 	@echo "... src/main_hw1.s"
+	@echo "... src/main_hw2.o"
+	@echo "... src/main_hw2.i"
+	@echo "... src/main_hw2.s"
 .PHONY : help
 
 
