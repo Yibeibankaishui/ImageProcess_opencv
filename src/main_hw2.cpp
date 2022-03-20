@@ -22,6 +22,7 @@ int main(int argc, char **argv){
     params.push_back(1.0);
     // pipeline
     cv::Mat output_image = undist.PreProcess(input_image);
+    
 
     // cv::SimpleBlobDetector detector;
 
@@ -29,7 +30,7 @@ int main(int argc, char **argv){
     cv::SimpleBlobDetector::Params params_b;
     // Change thresholds
     params_b.minThreshold = 0;
-    params_b.maxThreshold = 128;
+    params_b.maxThreshold = 215;
 
     // Filter by Area.
     params_b.filterByArea = true;
@@ -37,7 +38,7 @@ int main(int argc, char **argv){
 
     // Filter by Circularity
     params_b.filterByCircularity = true;
-    params_b.minCircularity = 0.5;
+    params_b.minCircularity = 0.7;
 
     // Filter by Convexity
     params_b.filterByConvexity = true;
@@ -64,27 +65,35 @@ int main(int argc, char **argv){
     for (auto pi: points){
         cv::circle( im_with_keypoints, pi, 1, cv::Scalar(0,0,255), -1);
     }
-    output_image = undist.GetUndistortImage(input_image, params);
+    // output_image = undist.GetUndistortImage(input_image, params);
 
     // Show blobs
     imshow("keypoints", im_with_keypoints );
     cv::imwrite("../images/keypoints.png", im_with_keypoints);
     // show images
     cv::imshow("input", input_image);
-    // cv::imshow("output", output_image);
-    // cv::waitKey(0);
+    cv::imshow("output", output_image);
+    cv::imwrite("../images/output_distort.png", output_image);
+    
+    cv::waitKey(0);
 
-    cout << undistort::PointDistance(points[2],points[3]) << endl;
     cv::Point2f Pt;
     cv::Point2f center{126,118};
-    Pt = undistort::FindClosestPoint(center,points, 1);
+    Pt = undistort::FindClosestPoint(center, points, 0);
     // Pt = undistort::FindClosestPoint(center,points, 1);
     // Pt = undistort::FindClosestPoint(center,points, 1);
     // Pt = undistort::FindClosestPoint(center,points, 1);
     // cout << Pt << endl;
-    // cv::Mat * in = &input_image;
-    // undistort::PointMap pm(points, in, 2);
-    // cout << pm.centerNode->data.x << pm.centerNode->data.y << endl;
+    cv::Mat * in = &input_image;
+    // 构造PointMap
+    undistort::PointMap pm(points, in, 2);
+    cout << "center:   " << pm.centerNode->data << endl;
+    vector<cv::Point2f> new_points(points);
+    pm.FormNeighborPoints(*(pm.centerNode), new_points);
+    cout << points.size() << endl;
+    cout << pm.NodeVec.size() << endl;
+    cout << pm.centerNode->left->left->up->data << endl;
+
     return 0;
 }
 

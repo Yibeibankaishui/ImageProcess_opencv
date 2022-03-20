@@ -55,14 +55,21 @@ namespace undistort{
     cv::Mat Undistort::PreProcess(const cv::Mat & img_input){
         // 锐化/模糊化
         cv::Mat img_output;
-        // int k = 3;
-        // cv::GaussianBlur( img_input, img_output, cv::Size( k, k ), 0, 0 );
+        cv::Mat img_light;
+        cv::Mat img_corp;
+        cv::Rect rect(4,4,252,236);
+        img_corp = img_input(rect);
+        int k = 91;
+        cv::GaussianBlur( img_corp, img_light, cv::Size( k, k ), 0, 0 );
+        cv::imshow( "blur", img_light);
+        img_output = 255-(img_light - img_corp);
+        // cv::imshow("out", img_output);
+        // cv::waitKey(0);
 
         // img_output = img_input.clone();
         // 图像裁剪
         // cv::Point2f pt();
-        cv::Rect rect(4,4,252,236);
-        img_output = img_input(rect);
+        
         // 二值化
         return img_output;
         // 腐蚀操作
@@ -89,7 +96,7 @@ namespace undistort{
         for (int x = -s; x < s; x++){
             for (int y = -s; y < s; y++){
                 //  建立带索引的Node
-                curNode = new Node(x, y);
+                // curNode = new Node(x, y);
                 //  设置相邻Node
 
             }
@@ -123,12 +130,12 @@ namespace undistort{
         
         cv::Point2f res;
         double dis;
-        double minDis = 999999;
+        double minDis = 1700;
         
         auto itr_del = points.begin();
         for (auto itr = points.begin(); itr != points.end(); itr++){
             dis = PointDistance(pt, *itr);
-            if (dis < minDis){
+            if (dis < minDis) {
                 res = *itr;
                 minDis = dis;
                 if (del == 1){
@@ -140,7 +147,7 @@ namespace undistort{
         if (del == 1){
             points.erase(itr_del);
         }
-        std::cout << res << std::endl;
+        //  如果未找到，会返回[0, 0]
         return res;
     }
 
@@ -154,24 +161,90 @@ namespace undistort{
     int AssertOrient(const cv::Point2f & pt_from, const cv::Point2f & pt_to, double delta){
         double angle = CalculateAngle(pt_from, pt_to);
 
-        if ((angle >= -delta) && (angle <= delta)) {return 1;}
-        if ((angle >= PI/2-delta) && (angle >= PI/2+delta)) {return 2;}
-        if (((angle >= -PI) && (angle <= -PI+delta)) || ((angle >= PI-delta) && (angle <= PI))) {return 3;}
-        if ((angle >= -PI/2-delta) && (angle <= -PI/2+delta)) {return 4;}
+        if ((angle >= -delta) && (angle <= delta)) {return R;}
+        if ((angle >= PI/2-delta) && (angle <= PI/2+delta)) {return D;}
+        if (((angle >= -PI) && (angle <= -PI+delta)) || ((angle >= PI-delta) && (angle <= PI))) {return L;}
+        if ((angle >= -PI/2-delta) && (angle <= -PI/2+delta)) {return U;}
 
         return 0;
     }
 
     //  输入points向量和一个point，找最近点且形成连接
-    void FormNeighborPoints(PointMap::Node & node, std::vector<cv::Point2f> & points){
-        FindClosestPoint();
-        AssertOrient();
+    void PointMap::FormNeighborPoints(PointMap::Node & node, std::vector<cv::Point2f> & points){
+        //  先删除当前点
+        DeletePoint(points, node.data);
+        //  拷贝points作为搜索vector
+        std::vector<cv::Point2f> points_search(points);
+        std::cout << "cur:  " << node.data << std::endl;
+        
+        for (int cnt = 0; cnt < 4; cnt++) {
+            //  找四个最邻点
+            if (points_search.empty()) {break;}
+            if (node.complete()) {break;}
 
+            cv::Point2f p_neighbor = FindClosestPoint(node.data, points_search);
+            if (p_neighbor == cv::Point2f(0,0)) {break;}
+            int ori = AssertOrient(node.data, p_neighbor);
+            if ((ori == R) && (node.right == nullptr)) {
+                node.right = new PointMap::Node(0,0,p_neighbor);
+                node.right->left = &node;
+                // std::cout << "r: " << node.right->data << std::endl;
+                FormNeighborPoints(*(node.right), points);
+                }
+            else if((ori == U) && (node.up == nullptr)) {
+                node.up = new PointMap::Node(0,0,p_neighbor);
+                node.up->down = &node;
+                // std::cout << "u: " << node.up->data << std::endl;
+                FormNeighborPoints(*(node.up), points);
+                }
+            else if((ori == L) && (node.left == nullptr)) {
+                node.left = new PointMap::Node(0,0,p_neighbor);
+                node.left->right = &node;
+                // std::cout << "l: " << node.left->data << std::endl;
+                FormNeighborPoints(*(node.left), points);
+                }
+            else if((ori == D) && (node.down == nullptr)) {
+                node.down = new PointMap::Node(0,0,p_neighbor);
+                node.down->up = &node;
+                // std::cout << "d: " << node.down->data << std::endl;
+                FormNeighborPoints(*(node.down), points);
+                }
+
+            //  最近点不在四个方位上，直接去除
+            DeletePoint(points_search, p_neighbor);
+            
+        }
+        //  not found
+        // if (std::find(NodeVec.begin(), NodeVec.end(), node) == NodeVec.end()){
+        //     NodeVec.push_back(node);
+        //     }
+        if (!NodeInVec(node)){
+            NodeVec.push_back(node);
+            }
+        
+        return;
+        
+    }
+
+    bool PointMap::NodeInVec(const PointMap::Node & node){
+        for (auto itr = NodeVec.begin(); itr != NodeVec.end(); itr++){
+            if (itr->data == node.data){
+                //  NodeVec中已经包含这个node
+                return true;
+            }
+        }
+        return false;
     }
 
     //  删除points vector中指定元素
-    void DeletePoint(std::vector<cv::Point2f> & points){
-        
+    int DeletePoint(std::vector<cv::Point2f> & points, cv::Point2f pt){
+        for (auto itr = points.begin(); itr != points.end(); itr++){
+            if(*itr == pt){
+                points.erase(itr);
+                return 1;
+            }
+        }
+        return 0;
     }
 
 }
