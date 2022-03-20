@@ -9,6 +9,7 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#include <algorithm>
 
 
 #define R 1
@@ -54,7 +55,7 @@ namespace undistort{
                 Node *left;
                 Node *right;
 
-                Node(int x, int y, const cv::Point2f & pt = cv::Point2f(0,0), Node *pu = nullptr, Node *pd = nullptr, Node *pl = nullptr, Node *pr = nullptr): index_x{x}, index_y{y}, data{pt}, up{pu}, down{pd}, left{pl}, right{pr} { }
+                Node(int x=0, int y=0, const cv::Point2f & pt = cv::Point2f(0,0), Node *pu = nullptr, Node *pd = nullptr, Node *pl = nullptr, Node *pr = nullptr): index_x{x}, index_y{y}, data{pt}, up{pu}, down{pd}, left{pl}, right{pr} { }
 
                 bool empty() {return (data == cv::Point2f(0,0));}
                 bool complete() {return ((up!=nullptr) && (down!=nullptr) && (left!=nullptr) && (right!=nullptr));}
@@ -72,6 +73,10 @@ namespace undistort{
             Node * GetNode(int x, int y);
             //  由坐标获得点的坐标值
             const cv::Point2f & GetData(int x, int y);
+            //  确定NodeVec中有没有
+            bool NodeInVec(const Node & node);
+            //  输入points向量和一个point，找最近点且形成连接
+            void FormNeighborPoints(PointMap::Node & node, std::vector<cv::Point2f> & points);
     };
 
     double PointDistance(const cv::Point2f & pt1, const cv::Point2f & pt2);
@@ -80,13 +85,13 @@ namespace undistort{
 
     double CalculateAngle(const cv::Point2f & pt_from, const cv::Point2f & pt_to);
 
-    int AssertOrient(const cv::Point2f & pt_from, const cv::Point2f & pt_to, double delta=0.1745);
+    //  delta值为最小角度差
+    int AssertOrient(const cv::Point2f & pt_from, const cv::Point2f & pt_to, double delta=0.5);
 
-    //  输入points向量和一个point，找最近点且形成连接
-    void FormNeighborPoints(PointMap::Node & node, std::vector<cv::Point2f> & points);
+    
 
     //  删除points vector中指定元素
-    void DeletePoint(std::vector<cv::Point2f> & points);
+    int DeletePoint(std::vector<cv::Point2f> & points, cv::Point2f pt);
 
     void ConstructPointMap();
 }
