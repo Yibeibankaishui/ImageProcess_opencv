@@ -112,10 +112,16 @@ namespace undistort{
         }
     }
 
+    //  由索引坐标获得node
     PointMap::Node * PointMap::GetNode(int x, int y){
-
+        for (auto itr = NodeVec.begin(); itr != NodeVec.end(); itr++){
+            if ((itr->index_x == x) && (itr->index_y == y)){
+                return &(*itr);
+            }
+        }
     }
 
+    //  由索引坐标获得node的图像坐标值
     const cv::Point2f & PointMap::GetData(int x, int y){
 
     }
@@ -176,6 +182,9 @@ namespace undistort{
         //  拷贝points作为搜索vector
         std::vector<cv::Point2f> points_search(points);
         std::cout << "cur:  " << node.data << std::endl;
+        //  记录下当前点的索引坐标（不是在图像中的坐标）
+        int id_x = node.index_x;
+        int id_y = node.index_y;
         
         for (int cnt = 0; cnt < 4; cnt++) {
             //  找四个最邻点
@@ -186,25 +195,25 @@ namespace undistort{
             if (p_neighbor == cv::Point2f(0,0)) {break;}
             int ori = AssertOrient(node.data, p_neighbor);
             if ((ori == R) && (node.right == nullptr)) {
-                node.right = new PointMap::Node(0,0,p_neighbor);
+                node.right = new PointMap::Node(id_x+1,id_y,p_neighbor);
                 node.right->left = &node;
                 // std::cout << "r: " << node.right->data << std::endl;
                 FormNeighborPoints(*(node.right), points);
                 }
             else if((ori == U) && (node.up == nullptr)) {
-                node.up = new PointMap::Node(0,0,p_neighbor);
+                node.up = new PointMap::Node(id_x,id_y+1,p_neighbor);
                 node.up->down = &node;
                 // std::cout << "u: " << node.up->data << std::endl;
                 FormNeighborPoints(*(node.up), points);
                 }
             else if((ori == L) && (node.left == nullptr)) {
-                node.left = new PointMap::Node(0,0,p_neighbor);
+                node.left = new PointMap::Node(id_x-1,id_y,p_neighbor);
                 node.left->right = &node;
                 // std::cout << "l: " << node.left->data << std::endl;
                 FormNeighborPoints(*(node.left), points);
                 }
             else if((ori == D) && (node.down == nullptr)) {
-                node.down = new PointMap::Node(0,0,p_neighbor);
+                node.down = new PointMap::Node(id_x,id_y-1,p_neighbor);
                 node.down->up = &node;
                 // std::cout << "d: " << node.down->data << std::endl;
                 FormNeighborPoints(*(node.down), points);

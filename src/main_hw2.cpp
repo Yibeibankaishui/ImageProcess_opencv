@@ -92,7 +92,7 @@ int main(int argc, char **argv){
     pm.FormNeighborPoints(*(pm.centerNode), new_points);
     cout << points.size() << endl;
     cout << pm.NodeVec.size() << endl;
-    cout << pm.centerNode->left->left->up->data << endl;
+    // cout << pm.NodeVec << endl;
 
     return 0;
 }

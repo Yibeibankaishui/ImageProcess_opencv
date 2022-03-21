@@ -88,7 +88,7 @@ namespace undistort{
     //  delta值为最小角度差
     int AssertOrient(const cv::Point2f & pt_from, const cv::Point2f & pt_to, double delta=0.5);
 
-    
+    void GenerateRealPoints();
 
     //  删除points vector中指定元素
     int DeletePoint(std::vector<cv::Point2f> & points, cv::Point2f pt);
