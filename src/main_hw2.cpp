@@ -93,6 +93,12 @@ int main(int argc, char **argv){
     cout << points.size() << endl;
     cout << pm.NodeVec.size() << endl;
     // cout << pm.NodeVec << endl;
+    for (int i = -3; i < 4; i++){
+        for (int j = -3; j < 4; j++){
+            cout << pm.GetData(i,j) << endl;
+        }
+    }
+    
 
     return 0;
 }

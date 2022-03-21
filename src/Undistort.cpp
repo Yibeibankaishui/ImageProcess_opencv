@@ -122,8 +122,9 @@ namespace undistort{
     }
 
     //  由索引坐标获得node的图像坐标值
-    const cv::Point2f & PointMap::GetData(int x, int y){
-
+    cv::Point2f PointMap::GetData(int x, int y){
+        PointMap::Node * n = PointMap::GetNode(x, y);
+        return n->data;
     }
 
     double PointDistance(const cv::Point2f & pt1, const cv::Point2f & pt2){

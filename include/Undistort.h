@@ -72,7 +72,7 @@ namespace undistort{
             //  由坐标获得Node
             Node * GetNode(int x, int y);
             //  由坐标获得点的坐标值
-            const cv::Point2f & GetData(int x, int y);
+            cv::Point2f GetData(int x, int y);
             //  确定NodeVec中有没有
             bool NodeInVec(const Node & node);
             //  输入points向量和一个point，找最近点且形成连接
