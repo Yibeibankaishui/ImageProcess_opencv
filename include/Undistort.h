@@ -70,7 +70,7 @@ namespace undistort{
             PointMap(const std::vector<cv::Point2f> & points, cv::Mat *img, int s);
 
             //  由坐标获得Node
-            Node * GetNode(int x, int y);
+            Node * GetNode(int x, int y, cv::Point2f pt = cv::Point2f(0,0));
             //  由坐标获得点的坐标值
             cv::Point2f GetData(int x, int y);
             //  确定NodeVec中有没有
@@ -86,7 +86,7 @@ namespace undistort{
     double CalculateAngle(const cv::Point2f & pt_from, const cv::Point2f & pt_to);
 
     //  delta值为最小角度差
-    int AssertOrient(const cv::Point2f & pt_from, const cv::Point2f & pt_to, double delta=0.5);
+    int AssertOrient(const cv::Point2f & pt_from, const cv::Point2f & pt_to, double delta=0.42);
 
     void GenerateRealPoints();
 
