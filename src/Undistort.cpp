@@ -258,15 +258,28 @@ namespace undistort{
         float alpha = params[5];
         float beta = params[6];
 
-        float r = 0;
+        float r, u_d, v_d;
         for (auto &node : pm_distort.NodeVec) {
-           r = sqrt(node.data.x - cx) + sqrt(node.data.y - cy);
+            r = sqrt(pow((node.data.x - cx), 2) + pow((node.data.y - cy), 2));
+            u_d = (node.data.x - cx) * (1 + k1 * pow(r, 2) + k2 * pow(r, 4) + k3 * pow(r, 6)) + cx;
+            v_d = (node.data.y - cy) * (1 + k1 * pow(r, 2) + k2 * pow(r, 4) + k3 * pow(r, 6)) + cy;
+            node.data.x = u_d;
+            node.data.y = v_d;
         }
     }
 
     //  计算重投影误差
-    float CalculateError(const PointMap & pm_real, const PointMap & pm_predict){
-
+    float CalculateError(PointMap & pm_real, PointMap & pm_predict){
+        float sum = 0;
+        cv::Point2f p_r, p_p;
+        for (int i = -3; i <= 3; i++){
+            for (int j = -3; j <= 3; j++){
+                p_r = pm_real.GetData(i, j);
+                p_p = pm_predict.GetData(i, j);
+                sum += 0.5 * (PointDistance(p_r, p_p));
+            }
+        }
+        return sum;
     }
 
 }

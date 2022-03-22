@@ -96,7 +96,7 @@ int main(int argc, char **argv){
 
     cv::Mat * out = &output_image;
     // 构造PointMap
-    undistort::PointMap pm(points, out, 2);
+    undistort::PointMap pm(points, out, 3);
     cout << "center:   " << pm.centerNode->data << endl;
     // vector<cv::Point2f> new_points(points);
     // pm.FormNeighborPoints(*(pm.centerNode), new_points);
@@ -108,7 +108,26 @@ int main(int argc, char **argv){
         // cout << Ppt << endl;
         cv::circle( im_with_keypoints, Ppt, 1, cv::Scalar(0,255,0), -1);
     }
-    undistort::PointMap pm_real(real_points, out, 2);
+    undistort::PointMap pm_real(real_points, out, 3);
+
+    //  float sum = 0;
+    //     cv::Point2f p_r, p_p;
+    //   for (int i = -3; i <= 3; i++){
+    //         for (int j = -3; j <= 3; j++){
+    //             p_r = pm_real.GetData(i, j);
+    //             std::cout << p_r << std::endl;
+    //             p_p = pm.GetData(i, j);
+    //             std::cout << p_p << std::endl;
+    //             sum += 0.5 * (undistort::PointDistance(p_r, p_p));
+    //         }
+    //     }
+    //     cout << sum;
+    undistort::PointMap pm_r = pm_real;
+    undistort::DistortPoints(pm_r, params);
+    double err = undistort::CalculateError(pm_real, pm);
+    cout << err << endl;
+    double err2 = undistort::CalculateError(pm_r, pm);
+    cout << err2 << endl;
 
     // show images
     cv::imshow("input", input_image);

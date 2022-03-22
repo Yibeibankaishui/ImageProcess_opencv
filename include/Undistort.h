@@ -73,6 +73,7 @@ namespace undistort{
             Node * GetNode(int x, int y, cv::Point2f pt = cv::Point2f(0,0));
             //  由坐标获得点的坐标值
             cv::Point2f GetData(int x, int y);
+            
             //  确定NodeVec中有没有
             bool NodeInVec(const Node & node);
             //  输入points向量和一个point，找最近点且形成连接
@@ -97,7 +98,7 @@ namespace undistort{
     void DistortPoints(PointMap & pm_distort, const std::vector<double> params);
 
     //  计算重投影误差
-    float CalculateError(const PointMap & pm_real, const PointMap & pm_predict);
+    float CalculateError(PointMap & pm_real, PointMap & pm_predict);
 
     //  删除points vector中指定元素
     int DeletePoint(std::vector<cv::Point2f> & points, cv::Point2f pt);
