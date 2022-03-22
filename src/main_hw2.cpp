@@ -58,8 +58,21 @@ int main(int argc, char **argv){
         return 0;
     }
     undistort::Undistort undist;
-    //  畸变参数
+    float k1, k2, k3, cx, cy, alpha, beta;
+    cx = 126;
+    cy = 118;
+    alpha = 1;
+    beta = 1;
+    //  畸变参数: k1, k2, k3, cx, cy, alpha, beta
     vector<double> params;
+    params.push_back(k1);
+    params.push_back(k2);
+    params.push_back(k3);
+    params.push_back(cx);
+    params.push_back(cy);
+    params.push_back(alpha);
+    params.push_back(beta);
+
     params.push_back(1.0);
     // pipeline
     cv::Mat output_image = undist.PreProcess(input_image);
@@ -79,6 +92,24 @@ int main(int argc, char **argv){
 
     // output_image = undist.GetUndistortImage(input_image, params);
 
+
+
+    cv::Mat * out = &output_image;
+    // 构造PointMap
+    undistort::PointMap pm(points, out, 2);
+    cout << "center:   " << pm.centerNode->data << endl;
+    // vector<cv::Point2f> new_points(points);
+    // pm.FormNeighborPoints(*(pm.centerNode), new_points);
+    
+    //  生成真实点
+    vector<cv::Point2f> real_points;
+    undistort::GenerateRealPoints(real_points, out, 6, 4);
+    for (auto Ppt: real_points){
+        // cout << Ppt << endl;
+        cv::circle( im_with_keypoints, Ppt, 1, cv::Scalar(0,255,0), -1);
+    }
+    undistort::PointMap pm_real(real_points, out, 2);
+
     // show images
     cv::imshow("input", input_image);
     cv::imshow("output", output_image);
@@ -87,13 +118,6 @@ int main(int argc, char **argv){
     cv::imwrite("../images/keypoints.png", im_with_keypoints);
     
     cv::waitKey(0);
-
-    cv::Mat * in = &input_image;
-    // 构造PointMap
-    undistort::PointMap pm(points, in, 2);
-    cout << "center:   " << pm.centerNode->data << endl;
-    // vector<cv::Point2f> new_points(points);
-    // pm.FormNeighborPoints(*(pm.centerNode), new_points);
 
     return 0;
 }

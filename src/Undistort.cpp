@@ -61,7 +61,7 @@ namespace undistort{
         img_corp = img_input(rect);
         int k = 81;
         cv::GaussianBlur( img_corp, img_light, cv::Size( k, k ), 0, 0 );
-        cv::imshow( "blur", img_light);
+        // cv::imshow( "blur", img_light);
         img_output = 255-(img_light - img_corp);
         // cv::imshow("out", img_output);
         // cv::waitKey(0);
@@ -201,12 +201,10 @@ namespace undistort{
                 }
 
             //  最近点不在四个方位上，直接去除
-            DeletePoint(points_search, p_neighbor);
-            
+            DeletePoint(points_search, p_neighbor);  
         }
         
-        return;
-        
+        return;     
     }
 
     bool PointMap::NodeInVec(const PointMap::Node & node){
@@ -229,6 +227,46 @@ namespace undistort{
             }
         }
         return 0;
+    }
+
+    //  生成真实点的位置
+    void GenerateRealPoints(std::vector<cv::Point2f> & real_points, cv::Mat * img, int num_x, int num_y){
+        float center_x = (img->cols)/2;
+        float center_y = (img->rows)/2;
+        float int_x = center_x/num_x;
+        float int_y = center_y/num_y;
+        for (int i = -num_x; i <= num_x; i++){
+            for (int j = -num_y; j <= num_y; j++){
+                real_points.push_back(cv::Point2f(center_x+int_x*i, center_y+int_y*j));
+            }
+        }
+    }
+
+    //  对单个点应用畸变
+    cv::Point2f DistortPoint(const cv::Point2f & point){
+
+    }
+
+        //  获得真实点畸变之后的坐标
+    void DistortPoints(PointMap & pm_distort, const std::vector<double> params){
+        //  参数
+        float k1 = params[0];
+        float k2 = params[1];
+        float k3 = params[2];
+        float cx = params[3];
+        float cy = params[4];
+        float alpha = params[5];
+        float beta = params[6];
+
+        float r = 0;
+        for (auto &node : pm_distort.NodeVec) {
+           r = sqrt(node.data.x - cx) + sqrt(node.data.y - cy);
+        }
+    }
+
+    //  计算重投影误差
+    float CalculateError(const PointMap & pm_real, const PointMap & pm_predict){
+
     }
 
 }

@@ -88,12 +88,20 @@ namespace undistort{
     //  delta值为最小角度差
     int AssertOrient(const cv::Point2f & pt_from, const cv::Point2f & pt_to, double delta=0.42);
 
-    void GenerateRealPoints();
+    void GenerateRealPoints(std::vector<cv::Point2f> & real_points, cv::Mat * img, int num_x=7, int num_y=4);
+
+    //  对单个点应用畸变
+    cv::Point2f DistortPoint(const cv::Point2f & point);
+
+    //  获得真实点畸变之后的坐标
+    void DistortPoints(PointMap & pm_distort, const std::vector<double> params);
+
+    //  计算重投影误差
+    float CalculateError(const PointMap & pm_real, const PointMap & pm_predict);
 
     //  删除points vector中指定元素
     int DeletePoint(std::vector<cv::Point2f> & points, cv::Point2f pt);
 
-    void ConstructPointMap();
 }
 
 
