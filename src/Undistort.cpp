@@ -59,20 +59,13 @@ namespace undistort{
         cv::Mat img_corp;
         cv::Rect rect(4,4,252,236);
         img_corp = img_input(rect);
-        int k = 91;
+        int k = 81;
         cv::GaussianBlur( img_corp, img_light, cv::Size( k, k ), 0, 0 );
         cv::imshow( "blur", img_light);
         img_output = 255-(img_light - img_corp);
         // cv::imshow("out", img_output);
         // cv::waitKey(0);
-
-        // img_output = img_input.clone();
-        // 图像裁剪
-        // cv::Point2f pt();
-        
-        // 二值化
         return img_output;
-        // 腐蚀操作
     }
 
     PointMap::PointMap(){}
@@ -93,32 +86,22 @@ namespace undistort{
         centerNode = new Node(0, 0, centerPoint);
         //  建立NodeVec
         NodeVec.push_back(*centerNode);
-        for (int x = -s; x < s; x++){
-            for (int y = -s; y < s; y++){
-                //  建立带索引的Node
-                // curNode = new Node(x, y);
-                //  设置相邻Node
 
-            }
-        }
+        std::vector<cv::Point2f> new_points(points);
+        PointMap::FormNeighborPoints(*(this->centerNode), new_points);
 
-        //  对points中元素迭代
-        for (auto itr = points.begin(); itr != points.end(); itr++){
-            //  怎么迭代？怎么构造MAP？
-            //
-            //
-            //  找最近点
-            //  计算角度，判断是否为相邻点
-        }
     }
 
-    //  由索引坐标获得node
-    PointMap::Node * PointMap::GetNode(int x, int y){
+    //  由索引坐标获得node, 没有就创建
+    PointMap::Node * PointMap::GetNode(int x, int y, cv::Point2f pt){
         for (auto itr = NodeVec.begin(); itr != NodeVec.end(); itr++){
             if ((itr->index_x == x) && (itr->index_y == y)){
                 return &(*itr);
             }
         }
+        PointMap::Node * node_new = new PointMap::Node(x, y, pt);
+        NodeVec.push_back(*node_new);
+        return node_new;
     }
 
     //  由索引坐标获得node的图像坐标值
@@ -182,12 +165,13 @@ namespace undistort{
         DeletePoint(points, node.data);
         //  拷贝points作为搜索vector
         std::vector<cv::Point2f> points_search(points);
-        std::cout << "cur:  " << node.data << std::endl;
+
         //  记录下当前点的索引坐标（不是在图像中的坐标）
         int id_x = node.index_x;
         int id_y = node.index_y;
         
         for (int cnt = 0; cnt < 4; cnt++) {
+
             //  找四个最邻点
             if (points_search.empty()) {break;}
             if (node.complete()) {break;}
@@ -196,27 +180,23 @@ namespace undistort{
             if (p_neighbor == cv::Point2f(0,0)) {break;}
             int ori = AssertOrient(node.data, p_neighbor);
             if ((ori == R) && (node.right == nullptr)) {
-                node.right = new PointMap::Node(id_x+1,id_y,p_neighbor);
+                node.right = PointMap::GetNode(id_x+1,id_y,p_neighbor);
                 node.right->left = &node;
-                // std::cout << "r: " << node.right->data << std::endl;
                 FormNeighborPoints(*(node.right), points);
                 }
             else if((ori == U) && (node.up == nullptr)) {
-                node.up = new PointMap::Node(id_x,id_y+1,p_neighbor);
+                node.up = PointMap::GetNode(id_x,id_y+1,p_neighbor);
                 node.up->down = &node;
-                // std::cout << "u: " << node.up->data << std::endl;
                 FormNeighborPoints(*(node.up), points);
                 }
             else if((ori == L) && (node.left == nullptr)) {
-                node.left = new PointMap::Node(id_x-1,id_y,p_neighbor);
+                node.left = PointMap::GetNode(id_x-1,id_y,p_neighbor);
                 node.left->right = &node;
-                // std::cout << "l: " << node.left->data << std::endl;
                 FormNeighborPoints(*(node.left), points);
                 }
             else if((ori == D) && (node.down == nullptr)) {
-                node.down = new PointMap::Node(id_x,id_y-1,p_neighbor);
+                node.down = PointMap::GetNode(id_x,id_y-1,p_neighbor);
                 node.down->up = &node;
-                // std::cout << "d: " << node.down->data << std::endl;
                 FormNeighborPoints(*(node.down), points);
                 }
 
@@ -224,13 +204,6 @@ namespace undistort{
             DeletePoint(points_search, p_neighbor);
             
         }
-        //  not found
-        // if (std::find(NodeVec.begin(), NodeVec.end(), node) == NodeVec.end()){
-        //     NodeVec.push_back(node);
-        //     }
-        if (!NodeInVec(node)){
-            NodeVec.push_back(node);
-            }
         
         return;
         
@@ -238,7 +211,8 @@ namespace undistort{
 
     bool PointMap::NodeInVec(const PointMap::Node & node){
         for (auto itr = NodeVec.begin(); itr != NodeVec.end(); itr++){
-            if (itr->data == node.data){
+            if (itr->data == node.data) {
+            // if ((itr->data == node.data) || ((itr->index_x == node.index_x) && (itr->index_y == node.index_y))){
                 //  NodeVec中已经包含这个node
                 return true;
             }

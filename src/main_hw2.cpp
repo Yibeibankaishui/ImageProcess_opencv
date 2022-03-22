@@ -3,34 +3,14 @@
 
 using namespace std;
 
-int main(int argc, char **argv){
 
-    // read an image
-    cv::Mat input_image;
-    // process input parameters
-    string filename = argv[1];
-
-    input_image = cv::imread(filename, cv::IMREAD_COLOR);
-
-    if (input_image.data == nullptr){
-        cerr << "image file " << filename << " NOT found !" << endl;
-        return 0;
-    }
-    undistort::Undistort undist;
-
-    vector<double> params;
-    params.push_back(1.0);
-    // pipeline
-    cv::Mat output_image = undist.PreProcess(input_image);
-    
-
-    // cv::SimpleBlobDetector detector;
-
+//  检测图像中的黑色斑点（特征点）
+void DetectKeyPoint(const cv::Mat & image, std::vector<cv::KeyPoint> & keypoints, std::vector<cv::Point2f> & points){
     // Detect blobs.
     cv::SimpleBlobDetector::Params params_b;
     // Change thresholds
     params_b.minThreshold = 0;
-    params_b.maxThreshold = 215;
+    params_b.maxThreshold = 210;
 
     // Filter by Area.
     params_b.filterByArea = true;
@@ -50,55 +30,70 @@ int main(int argc, char **argv){
 
     cv::Ptr<cv::SimpleBlobDetector> detector = cv::SimpleBlobDetector::create(params_b); 
     
-    std::vector<cv::KeyPoint> keypoints;
-    // detector.detect( output_image, keypoints);
-    detector->detect( output_image, keypoints );
-    std::vector<cv::Point2f> points;
+    detector->detect( image, keypoints );
     cv::KeyPoint::convert(keypoints, points);
+    
+    //  筛选，去除异常点
+    for (auto itr = points.begin(); itr != points.end(); ){
+        if ((itr -> x > 228) || (itr -> x < 25)){
+            itr = points.erase(itr);
+        }
+        else
+            itr ++;
+    }
+}
+
+
+int main(int argc, char **argv){
+
+    // read an image
+    cv::Mat input_image;
+    // process input parameters
+    string filename = argv[1];
+
+    input_image = cv::imread(filename, 0);
+
+    if (input_image.data == nullptr){
+        cerr << "image file " << filename << " NOT found !" << endl;
+        return 0;
+    }
+    undistort::Undistort undist;
+    //  畸变参数
+    vector<double> params;
+    params.push_back(1.0);
+    // pipeline
+    cv::Mat output_image = undist.PreProcess(input_image);
+
+    std::vector<cv::KeyPoint> keypoints;
+    std::vector<cv::Point2f> points;
+    DetectKeyPoint(output_image, keypoints, points);
+    
+    //  Visualization of blobs
     // Draw detected blobs as red circles.
-    // DrawMatchesFlags::DRAW_RICH_KEYPOINTS flag ensures the size of the circle corresponds to the size of blob
     cv::Mat im_with_keypoints = output_image.clone();
     cv::drawKeypoints( output_image, keypoints, im_with_keypoints, cv::Scalar(0,255,255), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS );
-    for (auto kp: keypoints){
-        cout << kp.pt << endl;
-    }
+
     for (auto pi: points){
         cv::circle( im_with_keypoints, pi, 1, cv::Scalar(0,0,255), -1);
     }
+
     // output_image = undist.GetUndistortImage(input_image, params);
 
-    // Show blobs
-    imshow("keypoints", im_with_keypoints );
-    cv::imwrite("../images/keypoints.png", im_with_keypoints);
     // show images
     cv::imshow("input", input_image);
     cv::imshow("output", output_image);
+    imshow("keypoints", im_with_keypoints );
     cv::imwrite("../images/output_distort.png", output_image);
+    cv::imwrite("../images/keypoints.png", im_with_keypoints);
     
     cv::waitKey(0);
 
-    cv::Point2f Pt;
-    cv::Point2f center{126,118};
-    Pt = undistort::FindClosestPoint(center, points, 0);
-    // Pt = undistort::FindClosestPoint(center,points, 1);
-    // Pt = undistort::FindClosestPoint(center,points, 1);
-    // Pt = undistort::FindClosestPoint(center,points, 1);
-    // cout << Pt << endl;
     cv::Mat * in = &input_image;
     // 构造PointMap
     undistort::PointMap pm(points, in, 2);
     cout << "center:   " << pm.centerNode->data << endl;
-    vector<cv::Point2f> new_points(points);
-    pm.FormNeighborPoints(*(pm.centerNode), new_points);
-    cout << points.size() << endl;
-    cout << pm.NodeVec.size() << endl;
-    // cout << pm.NodeVec << endl;
-    for (int i = -3; i < 4; i++){
-        for (int j = -3; j < 4; j++){
-            cout << pm.GetData(i,j) << endl;
-        }
-    }
-    
+    // vector<cv::Point2f> new_points(points);
+    // pm.FormNeighborPoints(*(pm.centerNode), new_points);
 
     return 0;
 }
