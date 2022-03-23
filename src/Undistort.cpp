@@ -1,17 +1,24 @@
 #include "Undistort.h" 
 
 
+using namespace Eigen;
+
 namespace undistort{
 
     cv::Mat Undistort::GetUndistortImage(const cv::Mat & img_input, const std::vector<double> & parameters){
         
         // 畸变参数
-        double k1 = 0.028340811, k2 = -0.0007395907, p1 = 0, p2 = 0;
-        // double k1, k2, p1, p2 = 0.0;
-        // k1 = 0.00002;
-        // k2 = 0.0002;
+        double k1 = parameters[0];
+        double k2 = parameters[1];
+        double k3 = parameters[2];
+        double p1, p2 = 0;
+        
         // 内参
-        double fx = 100, fy = 100, cx = 120, cy = 128;
+        double fx = 1.0;
+        double fy = 1.0;
+        double cx = CX;
+        double cy = CY;
+        // double fx = 100, fy = 100, cx = 120, cy = 128;
 
         int rows = img_input.rows;
         int cols = img_input.cols;
@@ -26,13 +33,13 @@ namespace undistort{
                 double u_distorted = 0, v_distorted = 0;
 
                 // 按照公式，计算点(u,v)对应到畸变图像中的坐标(u_distorted, v_distorted) (~6 lines)
-                double x = (u - cx) / fx;
-                double y = (v - cy) / fy;
+                double x = (u - cx) ;
+                double y = (v - cy) ;
                 double r = sqrt(x * x + y * y);
                 double x_distorted = x * (1 + k1 * r * r + k2 * r * r * r * r) + 2 * p1 * x * y + p2 * (r * r + 2 * x * x);
                 double y_distorted = y * (1 + k1 * r * r + k2 * r * r * r * r) + p1 * (r * r + 2 * y * y) + 2 * p2 * x * y;
-                u_distorted = fx * x_distorted + cx;
-                v_distorted = fy * y_distorted + cy;     
+                u_distorted = 1 * x_distorted + cx;
+                v_distorted = 1 * y_distorted + cy;     
                 // std::cout << v << "    " <<  u << " --- "<< v_distorted << "    " << u_distorted << std::endl;
                 // 赋值 (最近邻插值)
                 if (u_distorted >= 0 && v_distorted >= 0 && u_distorted < cols && v_distorted < rows) {
@@ -48,9 +55,160 @@ namespace undistort{
         return image_undistort;
     }
 
-    std::vector<double> Undistort::GetParameters(const cv::Mat & img_input){
+    void SolveParameters_ceres(std::vector<double> & params, undistort::PointMap & pm_real, undistort::PointMap & pm_distort){
+        //  parameter: k1, k2, k3
+        double K[3]={0,0,0};
+        //  获得参数
+        std::vector<double> data_ur;
+        std::vector<double> data_vr;
+        std::vector<double> data_ud;
+        std::vector<double> data_vd;
+        std::vector<double> data_r2;
+        cv::Point2f pt_r;
+        cv::Point2f pt_d;
+        double r2;
+        for(int i = -3; i <= 3; i+=1){
+            for(int j = -3; j <= 3; j+=1){
+                pt_r = pm_real.GetData(i, j);
+                pt_d = pm_distort.GetData(i, j);
+                data_ur.push_back(pt_r.x);
+                data_vr.push_back(pt_r.y);
+                data_ud.push_back(pt_d.x);
+                data_vd.push_back(pt_d.y);
+                r2 = (pow(pt_r.x - CX, 2) + pow(pt_r.y - CY, 2))/1.0;
+                std::cout << pt_r << pt_d << r2 << "    ;  " << std::endl;
+                data_r2.push_back(r2);
+            }
+        }
+    
+        ceres::Problem problem;
+        for(int i = 0; i < 49; i++){
+                problem.AddResidualBlock(
+                new ceres::AutoDiffCostFunction<DISTORT_COST,1,3>(
+                    new DISTORT_COST(data_ud[i],data_vd[i],data_ur[i],data_vr[i],data_r2[i])
+                ),
+                nullptr,
+                K
+                );
+        }
 
+        //配置求解器并求解，输出结果
+        ceres::Solver::Options options;
+        options.linear_solver_type=ceres::DENSE_QR;
+        options.minimizer_progress_to_stdout=true;
+        options.max_num_iterations=10000;
+        ceres::Solver::Summary summary;
+        ceres::Solve(options,&problem,&summary);
+        params[0] = K[0];
+        params[1] = K[1];
+        params[2] = K[2];
+        std::cout << "k1= " << K[0] << std::endl;
+        std::cout << "k2= " << K[1] << std::endl;
+        std::cout << "k3= " << K[2] << std::endl;
+        // for(int i = -3; i <= 3; i++){
+        //     for(int j = -3; j <= 3; j++){
+        //         pt_r = pm_real.GetData(i, j);
+        //         pt_d = pm_distort.GetData(i, j);
+        //         data_ur.push_back(pt_r.x);
+        //         data_vr.push_back(pt_r.y);
+        //         data_ud.push_back(pt_d.x);
+        //         data_vd.push_back(pt_d.y);
+        //         r2 = (pow(pt_r.x - CX, 2) + pow(pt_r.y - CY, 2))/1.0;
+        //         std::cout << pt_r << pt_d << r2 << "    ;  " << std::endl;
+        //         data_r2.push_back(r2);
+        //     }
+        // }
+    
     }
+
+
+    void SolveParameters_GN(std::vector<double> & params, PointMap & pm_real, PointMap & pm_distort){
+        //  parameter: k1, k2, k3
+        double K[3]={0.0001945,-2.75e-08};
+        //  获得参数
+        std::vector<double> data_ur;
+        std::vector<double> data_vr;
+        std::vector<double> data_ud;
+        std::vector<double> data_vd;
+        std::vector<double> data_r2;
+        cv::Point2f pt_r;
+        cv::Point2f pt_d;
+        double r2;
+        for(int i = -3; i <= 3; i+=2){
+            for(int j = -3; j <= 3; j+=2){
+                pt_r = pm_real.GetData(i, j);
+                pt_d = pm_distort.GetData(i, j);
+                data_ur.push_back(pt_r.x);
+                data_vr.push_back(pt_r.y);
+                data_ud.push_back(pt_d.x);
+                data_vd.push_back(pt_d.y);
+                r2 = pow(pt_r.x - CX, 2) + pow(pt_r.y - CY, 2);
+                std::cout << pt_r << pt_d << r2 << "    ;  " << std::endl;
+                data_r2.push_back(r2);
+            }
+        }        
+
+        //  iterations begin here
+        int iterations = 500;
+        double Cost = 0;
+        double lastCost = 0;
+
+        int N = 16;
+
+        double eta = 2e-20;
+
+        for (int iter = 0; iter < iterations; iter++){
+            std::cout << "iter:  " << iter << "  lastCost:   " << lastCost <<std::endl;
+            Matrix3d H = Matrix3d::Zero();
+            Vector3d b = Vector3d::Zero();
+            Vector3d Jx = Vector3d::Zero();
+            Cost = 0;
+
+            for (int i = 0; i < N; i++){
+                double u_pre = (data_ur[i]-CX)*(K[0]*data_r2[i]+K[1]*data_r2[i]*data_r2[i]+K[2]*data_r2[i]*data_r2[i]*data_r2[i]+1.0) + CX;
+                double v_pre = (data_vr[i]-CY)*(K[0]*data_r2[i]+K[1]*data_r2[i]*data_r2[i]+K[2]*data_r2[i]*data_r2[i]*data_r2[i]+1.0) + CY;
+                double error = sqrt(pow((u_pre - data_ud[i]), 2) + pow((v_pre - data_vd[i]), 2));
+                Vector3d J;
+                J[0] = (data_r2[i]/error)*( (u_pre - data_ud[i]) * (data_ur[i] - CX) + (v_pre - data_vd[i]) * (data_vr[i] - CY) );
+                J[1] = (data_r2[i]*data_r2[i]/error)*( (u_pre - data_ud[i]) * (data_ur[i] - CX) + (v_pre - data_vd[i]) * (data_vr[i] - CY) );
+                J[2] = (data_r2[i]*data_r2[i]*data_r2[i]/error)*( (u_pre - data_ud[i]) * (data_ur[i] - CX) + (v_pre - data_vd[i]) * (data_vr[i] - CY) );
+
+                H += J * J.transpose();
+                b += -error * J;
+                // Jx += -J;
+                // std::cout << J[0] << std::endl;
+
+                Cost += error * error;
+            }
+
+            //  求解线性方程组
+            Vector3d dx = H.ldlt().solve(b);
+            if (isnan(dx[0])){
+                std::cout << "result nan !" << std::endl;
+                break;
+            }
+            // if (iter > 0 && Cost >= lastCost){
+            //     std::cout << "cost: " << Cost << ">= last cost:  " << lastCost << std::endl;
+            //     break;
+            // }
+
+            // K[0] += eta * Jx[0];
+            // K[1] += eta * Jx[1];
+            // K[2] += eta * Jx[2];
+            
+
+            K[0] += eta * dx[0];
+            K[1] += eta * dx[1];
+            // K[2] += eta * dx[2];
+            
+            lastCost = Cost;
+        }
+        std::cout << K[0] << "   " << K[1] << " " << K[2] << std::endl;
+        params[0] = K[0];
+        params[1] = K[1];
+        params[2] = K[2];
+    }
+
 
     cv::Mat Undistort::PreProcess(const cv::Mat & img_input){
         // 锐化/模糊化
@@ -153,7 +311,7 @@ namespace undistort{
 
         if ((angle >= -delta) && (angle <= delta)) {return R;}
         if ((angle >= PI/2-delta) && (angle <= PI/2+delta)) {return D;}
-        if (((angle >= -PI) && (angle <= -PI+delta)) || ((angle >= PI-delta) && (angle <= PI))) {return L;}
+        if (((angle >= -PI) && (angle <= -PI+delta)) || ((angle >= PI-delta) && (angle <= PI+delta))) {return L;}
         if ((angle >= -PI/2-delta) && (angle <= -PI/2+delta)) {return U;}
 
         return 0;
@@ -283,3 +441,10 @@ namespace undistort{
     }
 
 }
+
+
+
+
+
+
+

@@ -103,38 +103,66 @@ int main(int argc, char **argv){
     
     //  生成真实点
     vector<cv::Point2f> real_points;
-    undistort::GenerateRealPoints(real_points, out, 6, 4);
+    undistort::GenerateRealPoints(real_points, out, 7, 4);
     for (auto Ppt: real_points){
         // cout << Ppt << endl;
         cv::circle( im_with_keypoints, Ppt, 1, cv::Scalar(0,255,0), -1);
     }
+
     undistort::PointMap pm_real(real_points, out, 3);
 
     //  float sum = 0;
-    //     cv::Point2f p_r, p_p;
+    // cv::Point2f p_r, p_p;
     //   for (int i = -3; i <= 3; i++){
     //         for (int j = -3; j <= 3; j++){
     //             p_r = pm_real.GetData(i, j);
     //             std::cout << p_r << std::endl;
-    //             p_p = pm.GetData(i, j);
-    //             std::cout << p_p << std::endl;
-    //             sum += 0.5 * (undistort::PointDistance(p_r, p_p));
+    //             // p_p = pm.GetData(i, j);
+    //             // std::cout << p_p << std::endl;
+    //             // sum += 0.5 * (undistort::PointDistance(p_r, p_p));
     //         }
     //     }
     //     cout << sum;
-    undistort::PointMap pm_r = pm_real;
-    undistort::DistortPoints(pm_r, params);
-    double err = undistort::CalculateError(pm_real, pm);
-    cout << err << endl;
-    double err2 = undistort::CalculateError(pm_r, pm);
-    cout << err2 << endl;
+    // undistort::PointMap pm_r = pm_real;
+    // undistort::DistortPoints(pm_r, params);
+    // double err = undistort::CalculateError(pm_real, pm);
+    // cout << err << endl;
+    // double err2 = undistort::CalculateError(pm_r, pm);
+    // cout << err2 << endl;
+    undistort::SolveParameters_GN(params, pm_real, pm);
+
+    // cv::Mat UndistortImg1, UndistortImg2;
+    // cv::Mat mK = ( cv::Mat_<double> ( 3,3 ) << 1, 0.0, CX, 0.0, 1, CY, 0.0, 0.0, 1.0 );
+    // cv::Mat mD = ( cv::Mat_<double> ( 5,1 ) << -9.41447e-5, -1.53931e-8, 6.16583e-13, 0.0, 0.0 );
+
+    // cv::undistort(output_image, UndistortImg1, mK, mD);
+    cv::Mat UndistortImg1 = undist.GetUndistortImage(output_image, params);
+
+    cv::Mat image2 = cv::imread("../images/image2.bmp");
+    // cv::undistort(image2, UndistortImg2, mK, mD);
+    cv::Mat UndistortImg2 = undist.GetUndistortImage(image2, params);
+
+    undistort::DistortPoints(pm_real, params);
+    cv::Point2f pt_r;
+    cv::Point2f pt_d;
+      for(int i = -3; i <= 3; i++){
+            for(int j = -3; j <= 3; j++){
+                pt_r = pm_real.GetData(i, j);
+                pt_d = pm.GetData(i, j);
+                std::cout << pt_r << " -- " << pt_d << std::endl;
+            }
+      }
 
     // show images
     cv::imshow("input", input_image);
     cv::imshow("output", output_image);
-    imshow("keypoints", im_with_keypoints );
+    cv::imshow("keypoints", im_with_keypoints );
+    cv::imshow("undistort1", UndistortImg1);
+    cv::imshow("undistort2", UndistortImg2);
+    cv::imwrite("../images/undist.png", UndistortImg1);
     cv::imwrite("../images/output_distort.png", output_image);
     cv::imwrite("../images/keypoints.png", im_with_keypoints);
+
     
     cv::waitKey(0);
 

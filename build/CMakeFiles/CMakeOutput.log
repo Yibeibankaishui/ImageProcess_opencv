@@ -272,3 +272,47 @@ Parsed CXX implicit link information from above output:
   implicit fwks: [/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks]
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_522d3/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_522d3.dir/build.make CMakeFiles/cmTC_522d3.dir/build
+Building C object CMakeFiles/cmTC_522d3.dir/CheckIncludeFile.c.o
+/usr/bin/clang   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -MD -MT CMakeFiles/cmTC_522d3.dir/CheckIncludeFile.c.o -MF CMakeFiles/cmTC_522d3.dir/CheckIncludeFile.c.o.d -o CMakeFiles/cmTC_522d3.dir/CheckIncludeFile.c.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_522d3
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_522d3.dir/link.txt --verbose=1
+/usr/bin/clang  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_522d3.dir/CheckIncludeFile.c.o -o cmTC_522d3 
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_efabf/fast && /Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_efabf.dir/build.make CMakeFiles/cmTC_efabf.dir/build
+Building C object CMakeFiles/cmTC_efabf.dir/src.c.o
+/usr/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -MD -MT CMakeFiles/cmTC_efabf.dir/src.c.o -MF CMakeFiles/cmTC_efabf.dir/src.c.o.d -o CMakeFiles/cmTC_efabf.dir/src.c.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_efabf
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_efabf.dir/link.txt --verbose=1
+/usr/bin/clang  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_efabf.dir/src.c.o -o cmTC_efabf 
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

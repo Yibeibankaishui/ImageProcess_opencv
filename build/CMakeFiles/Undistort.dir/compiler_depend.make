@@ -286,12 +286,650 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
   /usr/local/include/opencv2/flann/miniflann.hpp \
   /usr/local/include/opencv2/flann/defines.h \
   /usr/local/include/opencv2/flann/config.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream \
+  /opt/local/include/ceres/ceres.h \
+  /opt/local/include/ceres/autodiff_cost_function.h \
+  /opt/local/include/ceres/internal/autodiff.h \
+  /opt/local/include/ceres/internal/array_selector.h \
+  /opt/local/include/ceres/internal/fixed_array.h \
+  /opt/local/include/eigen3/Eigen/Core \
+  /opt/local/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/Macros.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/arm_fp16.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/MKL_support.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/Constants.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/Meta.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/StaticAssert.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/XprHelper.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/Memory.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/IntegralConstant.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h \
+  /opt/local/include/eigen3/Eigen/src/Core/NumTraits.h \
+  /opt/local/include/eigen3/Eigen/src/Core/MathFunctions.h \
+  /opt/local/include/eigen3/Eigen/src/Core/GenericPacketMath.h \
+  /opt/local/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/Default/Half.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/NEON/TypeCasting.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/Default/Settings.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
+  /opt/local/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
+  /opt/local/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
+  /opt/local/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
+  /opt/local/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
+  /opt/local/include/eigen3/Eigen/src/Core/functors/StlFunctors.h \
+  /opt/local/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h \
+  /opt/local/include/eigen3/Eigen/src/Core/ArithmeticSequence.h \
+  /opt/local/include/eigen3/Eigen/src/Core/IO.h \
+  /opt/local/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
+  /opt/local/include/eigen3/Eigen/src/Core/DenseBase.h \
+  /opt/local/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+  /opt/local/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+  /opt/local/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
+  /opt/local/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
+  /opt/local/include/eigen3/Eigen/src/Core/MatrixBase.h \
+  /opt/local/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+  /opt/local/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+  /opt/local/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+  /opt/local/include/eigen3/Eigen/src/Core/EigenBase.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Product.h \
+  /opt/local/include/eigen3/Eigen/src/Core/CoreEvaluators.h \
+  /opt/local/include/eigen3/Eigen/src/Core/AssignEvaluator.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Assign.h \
+  /opt/local/include/eigen3/Eigen/src/Core/ArrayBase.h \
+  /opt/local/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
+  /opt/local/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/BlasUtil.h \
+  /opt/local/include/eigen3/Eigen/src/Core/DenseStorage.h \
+  /opt/local/include/eigen3/Eigen/src/Core/NestByValue.h \
+  /opt/local/include/eigen3/Eigen/src/Core/ReturnByValue.h \
+  /opt/local/include/eigen3/Eigen/src/Core/NoAlias.h \
+  /opt/local/include/eigen3/Eigen/src/Core/PlainObjectBase.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Matrix.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Array.h \
+  /opt/local/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
+  /opt/local/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
+  /opt/local/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
+  /opt/local/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
+  /opt/local/include/eigen3/Eigen/src/Core/CwiseUnaryView.h \
+  /opt/local/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Dot.h \
+  /opt/local/include/eigen3/Eigen/src/Core/StableNorm.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Stride.h \
+  /opt/local/include/eigen3/Eigen/src/Core/MapBase.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Map.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Ref.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Block.h \
+  /opt/local/include/eigen3/Eigen/src/Core/VectorBlock.h \
+  /opt/local/include/eigen3/Eigen/src/Core/IndexedView.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Reshaped.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Transpose.h \
+  /opt/local/include/eigen3/Eigen/src/Core/DiagonalMatrix.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Diagonal.h \
+  /opt/local/include/eigen3/Eigen/src/Core/DiagonalProduct.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Redux.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Visitor.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Fuzzy.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Swap.h \
+  /opt/local/include/eigen3/Eigen/src/Core/CommaInitializer.h \
+  /opt/local/include/eigen3/Eigen/src/Core/GeneralProduct.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Solve.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Inverse.h \
+  /opt/local/include/eigen3/Eigen/src/Core/SolverBase.h \
+  /opt/local/include/eigen3/Eigen/src/Core/PermutationMatrix.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Transpositions.h \
+  /opt/local/include/eigen3/Eigen/src/Core/TriangularMatrix.h \
+  /opt/local/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
+  /opt/local/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
+  /opt/local/include/eigen3/Eigen/src/Core/SolveTriangular.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
+  /opt/local/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
+  /opt/local/include/eigen3/Eigen/src/Core/BandMatrix.h \
+  /opt/local/include/eigen3/Eigen/src/Core/CoreIterators.h \
+  /opt/local/include/eigen3/Eigen/src/Core/ConditionEstimator.h \
+  /opt/local/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h \
+  /opt/local/include/eigen3/Eigen/src/Core/BooleanRedux.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Select.h \
+  /opt/local/include/eigen3/Eigen/src/Core/VectorwiseOp.h \
+  /opt/local/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Random.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Replicate.h \
+  /opt/local/include/eigen3/Eigen/src/Core/Reverse.h \
+  /opt/local/include/eigen3/Eigen/src/Core/ArrayWrapper.h \
+  /opt/local/include/eigen3/Eigen/src/Core/StlIterators.h \
+  /opt/local/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
+  /opt/local/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
+  /opt/local/include/ceres/internal/memory.h \
+  /opt/local/include/glog/logging.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/unistd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/unistd.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_seek_set.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/select.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_select.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_uuid_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/gethostuuid.h \
+  /opt/local/include/glog/export.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/inttypes.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/inttypes.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/inttypes.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_inttypes.h \
+  /opt/local/include/gflags/gflags.h \
+  /opt/local/include/gflags/gflags_declare.h \
+  /opt/local/include/gflags/gflags_gflags.h \
+  /opt/local/include/glog/log_severity.h \
+  /opt/local/include/glog/vlog_is_on.h \
+  /opt/local/include/ceres/types.h \
+  /opt/local/include/ceres/internal/disable_warnings.h \
+  /opt/local/include/ceres/internal/port.h \
+  /opt/local/include/ceres/internal/config.h \
+  /opt/local/include/ceres/internal/reenable_warnings.h \
+  /opt/local/include/ceres/internal/eigen.h \
+  /opt/local/include/ceres/internal/parameter_dims.h \
+  /opt/local/include/ceres/internal/integer_sequence_algorithm.h \
+  /opt/local/include/ceres/internal/variadic_evaluate.h \
+  /opt/local/include/ceres/cost_function.h \
+  /opt/local/include/ceres/jet.h \
+  /opt/local/include/ceres/sized_cost_function.h \
+  /opt/local/include/ceres/autodiff_local_parameterization.h \
+  /opt/local/include/ceres/local_parameterization.h \
+  /opt/local/include/ceres/internal/line_parameterization.h \
+  /opt/local/include/ceres/internal/householder_vector.h \
+  /opt/local/include/ceres/conditioned_cost_function.h \
+  /opt/local/include/ceres/context.h \
+  /opt/local/include/ceres/cost_function_to_functor.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/numeric \
+  /opt/local/include/ceres/dynamic_cost_function_to_functor.h \
+  /opt/local/include/ceres/dynamic_cost_function.h \
+  /opt/local/include/ceres/covariance.h \
+  /opt/local/include/ceres/crs_matrix.h \
+  /opt/local/include/ceres/dynamic_autodiff_cost_function.h \
+  /opt/local/include/ceres/dynamic_numeric_diff_cost_function.h \
+  /opt/local/include/ceres/internal/numeric_diff.h \
+  /opt/local/include/eigen3/Eigen/Dense \
+  /opt/local/include/eigen3/Eigen/LU \
+  /opt/local/include/eigen3/Eigen/src/misc/Kernel.h \
+  /opt/local/include/eigen3/Eigen/src/misc/Image.h \
+  /opt/local/include/eigen3/Eigen/src/LU/FullPivLU.h \
+  /opt/local/include/eigen3/Eigen/src/LU/PartialPivLU.h \
+  /opt/local/include/eigen3/Eigen/src/LU/Determinant.h \
+  /opt/local/include/eigen3/Eigen/src/LU/InverseImpl.h \
+  /opt/local/include/eigen3/Eigen/src/LU/arch/InverseSize4.h \
+  /opt/local/include/eigen3/Eigen/Cholesky \
+  /opt/local/include/eigen3/Eigen/Jacobi \
+  /opt/local/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
+  /opt/local/include/eigen3/Eigen/src/Cholesky/LLT.h \
+  /opt/local/include/eigen3/Eigen/src/Cholesky/LDLT.h \
+  /opt/local/include/eigen3/Eigen/QR \
+  /opt/local/include/eigen3/Eigen/Householder \
+  /opt/local/include/eigen3/Eigen/src/Householder/Householder.h \
+  /opt/local/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
+  /opt/local/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
+  /opt/local/include/eigen3/Eigen/src/QR/HouseholderQR.h \
+  /opt/local/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
+  /opt/local/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
+  /opt/local/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
+  /opt/local/include/eigen3/Eigen/SVD \
+  /opt/local/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
+  /opt/local/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
+  /opt/local/include/eigen3/Eigen/src/SVD/SVDBase.h \
+  /opt/local/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
+  /opt/local/include/eigen3/Eigen/src/SVD/BDCSVD.h \
+  /opt/local/include/eigen3/Eigen/Geometry \
+  /opt/local/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/RotationBase.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/Quaternion.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/Transform.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/Translation.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/Scaling.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/Umeyama.h \
+  /opt/local/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h \
+  /opt/local/include/eigen3/Eigen/Eigenvalues \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+  /opt/local/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  /opt/local/include/eigen3/Eigen/StdVector \
+  /opt/local/include/eigen3/Eigen/src/StlSupport/StdVector.h \
+  /opt/local/include/eigen3/Eigen/src/StlSupport/details.h \
+  /opt/local/include/ceres/numeric_diff_options.h \
+  /opt/local/include/ceres/evaluation_callback.h \
+  /opt/local/include/ceres/gradient_checker.h \
+  /opt/local/include/ceres/gradient_problem.h \
+  /opt/local/include/ceres/first_order_function.h \
+  /opt/local/include/ceres/gradient_problem_solver.h \
+  /opt/local/include/ceres/iteration_callback.h \
+  /opt/local/include/ceres/loss_function.h \
+  /opt/local/include/ceres/numeric_diff_cost_function.h \
+  /opt/local/include/ceres/ordered_groups.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__tree \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__node_handle \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/optional \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/set \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/unordered_map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__hash_table \
+  /opt/local/include/ceres/problem.h \
+  /opt/local/include/ceres/solver.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/unordered_set \
+  /opt/local/include/ceres/version.h
 
+
+/opt/local/include/ceres/version.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/unordered_set:
+
+/opt/local/include/ceres/solver.h:
+
+/opt/local/include/ceres/problem.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/unordered_map:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/set:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/map:
+
+/opt/local/include/ceres/ordered_groups.h:
+
+/opt/local/include/ceres/loss_function.h:
+
+/opt/local/include/ceres/first_order_function.h:
+
+/opt/local/include/ceres/evaluation_callback.h:
+
+/opt/local/include/ceres/numeric_diff_options.h:
+
+/opt/local/include/eigen3/Eigen/src/StlSupport/details.h:
+
+/opt/local/include/eigen3/Eigen/src/StlSupport/StdVector.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h:
+
+/opt/local/include/ceres/numeric_diff_cost_function.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/Umeyama.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/Translation.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/AngleAxis.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/Quaternion.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/Rotation2D.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/OrthoMethods.h:
+
+/opt/local/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h:
+
+/opt/local/include/eigen3/Eigen/SVD:
+
+/opt/local/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h:
+
+/opt/local/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h:
+
+/opt/local/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h:
+
+/opt/local/include/eigen3/Eigen/src/QR/HouseholderQR.h:
+
+/opt/local/include/eigen3/Eigen/src/Householder/BlockHouseholder.h:
+
+/opt/local/include/eigen3/Eigen/src/Householder/HouseholderSequence.h:
+
+/opt/local/include/eigen3/Eigen/Householder:
+
+/opt/local/include/eigen3/Eigen/src/Cholesky/LDLT.h:
+
+/opt/local/include/eigen3/Eigen/src/Jacobi/Jacobi.h:
+
+/opt/local/include/eigen3/Eigen/src/LU/arch/InverseSize4.h:
+
+/opt/local/include/eigen3/Eigen/src/LU/InverseImpl.h:
+
+/opt/local/include/eigen3/Eigen/src/LU/Determinant.h:
+
+/opt/local/include/eigen3/Eigen/src/LU/PartialPivLU.h:
+
+/opt/local/include/eigen3/Eigen/src/LU/FullPivLU.h:
+
+/opt/local/include/eigen3/Eigen/src/misc/Image.h:
+
+/opt/local/include/eigen3/Eigen/src/misc/Kernel.h:
+
+/opt/local/include/eigen3/Eigen/LU:
+
+/opt/local/include/eigen3/Eigen/Dense:
+
+/opt/local/include/ceres/internal/numeric_diff.h:
+
+/opt/local/include/ceres/dynamic_numeric_diff_cost_function.h:
+
+/opt/local/include/ceres/dynamic_autodiff_cost_function.h:
+
+/opt/local/include/ceres/dynamic_cost_function_to_functor.h:
+
+/opt/local/include/ceres/crs_matrix.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/numeric:
+
+/opt/local/include/ceres/conditioned_cost_function.h:
+
+/opt/local/include/ceres/internal/line_parameterization.h:
+
+/opt/local/include/ceres/autodiff_local_parameterization.h:
+
+/opt/local/include/ceres/cost_function.h:
+
+/opt/local/include/ceres/internal/integer_sequence_algorithm.h:
+
+/opt/local/include/ceres/internal/eigen.h:
+
+/opt/local/include/eigen3/Eigen/StdVector:
+
+/opt/local/include/ceres/internal/config.h:
+
+/opt/local/include/ceres/internal/disable_warnings.h:
+
+/opt/local/include/glog/log_severity.h:
+
+/opt/local/include/eigen3/Eigen/src/SVD/JacobiSVD.h:
+
+/opt/local/include/gflags/gflags_gflags.h:
+
+/opt/local/include/gflags/gflags_declare.h:
+
+/opt/local/include/gflags/gflags.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/inttypes.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/inttypes.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/inttypes.h:
+
+/opt/local/include/glog/export.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/gethostuuid.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_seek_set.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/unistd.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/EulerAngles.h:
+
+/opt/local/include/glog/logging.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/StlIterators.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/ArrayWrapper.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Replicate.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/VectorwiseOp.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/BooleanRedux.h:
+
+/opt/local/include/ceres/context.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/RotationBase.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/CoreIterators.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/BandMatrix.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/SolveTriangular.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/CommaInitializer.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/SolverBase.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Solve.h:
+
+/opt/local/include/ceres/cost_function_to_functor.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Fuzzy.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Reverse.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Visitor.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/system_error:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/IntegralConstant.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Diagonal.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_setsize.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/mach/machine/_structs.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Transpose.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/libkern/arm/OSByteOrder.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Map.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Ref.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Stride.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Dot.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/limits.h:
+
+/usr/local/include/opencv2/highgui/highgui_c.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Array.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/limits.h:
+
+/usr/local/include/opencv2/imgcodecs.hpp:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_stdio.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/ReturnByValue.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/BlasUtil.h:
+
+/opt/local/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h:
+
+/opt/local/include/ceres/gradient_checker.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Matrix.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/NestByValue.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Assign.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stdint.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/CoreEvaluators.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_uint32_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__errc:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_suseconds_t.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Product.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/Memory.h:
+
+/opt/local/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
+
+/opt/local/include/ceres/internal/autodiff.h:
+
+/opt/local/include/eigen3/Eigen/src/plugins/ReshapedMethods.h:
+
+/opt/local/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h:
+
+/opt/local/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h:
+
+/opt/local/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/DenseBase.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/Scaling.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/errno.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Inverse.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/ArithmeticSequence.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/NEON/TypeCasting.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_wctrans_t.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/Parallelizer.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h:
+
+/opt/local/include/ceres/internal/port.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/Constants.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/MKL_support.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h:
+
+/opt/local/include/ceres/internal/fixed_array.h:
+
+/opt/local/include/ceres/internal/array_selector.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/GeneralProduct.h:
+
+/usr/local/include/opencv2/core/cvdef.h:
+
+/opt/local/include/ceres/autodiff_cost_function.h:
 
 /usr/local/include/opencv2/flann/defines.h:
 
 /usr/local/include/opencv2/features2d.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_size_t.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/EigenBase.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_once_t.h:
 
 /usr/local/include/opencv2/imgproc.hpp:
 
@@ -299,19 +937,53 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /usr/local/include/opencv2/imgproc/types_c.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/limits.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/VectorBlock.h:
+
+/opt/local/include/ceres/gradient_problem.h:
+
+/opt/local/include/eigen3/Eigen/Core:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/Transform.h:
+
 /usr/local/include/opencv2/imgproc/imgproc_c.h:
 
-/usr/local/include/opencv2/highgui/highgui_c.h:
+/opt/local/include/ceres/iteration_callback.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_ct_rune_t.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_types.h:
 
 /usr/local/include/opencv2/videoio.hpp:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stdlib.h:
+
+/usr/local/include/opencv2/core/mat.hpp:
+
 /usr/local/include/opencv2/highgui.hpp:
 
+/opt/local/include/eigen3/Eigen/src/Core/SelfAdjointView.h:
+
 /usr/local/include/opencv2/core/types_c.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/_mcontext.h:
 
 /usr/local/include/opencv2/core/utility.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/bitset:
+
+/usr/local/include/opencv2/core/base.hpp:
+
+/opt/local/include/eigen3/Eigen/src/Core/PlainObjectBase.h:
+
+/usr/local/include/opencv2/core/traits.hpp:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_set.h:
 
@@ -319,17 +991,27 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_nlink_t.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/unistd.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/Default/Half.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_posix_vdisable.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_key_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_ino_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_in_port_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_suseconds_t.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/new:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_gid_t.h:
 
+/opt/local/include/eigen3/Eigen/Eigenvalues:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_blkcnt_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_ctermid.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_caddr_t.h:
 
@@ -337,9 +1019,17 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_char.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bits:
+
 /usr/local/include/opencv2/flann/config.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_intmax_t.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_wctype.h:
+
+../include/Undistort.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/pthread/sched.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_time.h:
 
@@ -347,11 +1037,21 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__functional_base:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_isset.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/initializer_list:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_stdlib.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_stdio.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/optional:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/atomic:
+
+/opt/local/include/eigen3/Eigen/src/Core/GenericPacketMath.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/xlocale/__wctype.h:
 
@@ -363,29 +1063,49 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/streambuf:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_id_t.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/locale.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/locale.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__errc:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/memory:
+
+/opt/local/include/eigen3/Eigen/src/Core/Swap.h:
+
+/opt/local/include/eigen3/Eigen/src/SVD/SVDBase.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/mutex:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__node_handle:
+
+/usr/local/include/opencv2/core/fast_math.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__locale:
+
+/usr/local/include/opencv2/core/neon_utils.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ios:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/sstream:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/functional:
+
 /usr/local/include/opencv2/core/operations.hpp:
+
+/opt/local/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/nl_types.h:
 
-/usr/local/include/opencv2/core/mat.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__split_buffer:
 
+/opt/local/include/ceres/internal/parameter_dims.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/vector:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/signal.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/float.h:
 
@@ -393,19 +1113,27 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cfloat:
 
-/usr/local/include/opencv2/core/fast_math.hpp:
+/opt/local/include/eigen3/Eigen/src/plugins/BlockMethods.h:
 
 /usr/local/include/opencv2/core/check.hpp:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/__wctype.h:
+/usr/local/include/opencv2/core/ovx.hpp:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_wctrans_t.h:
+/opt/local/include/eigen3/Eigen/src/Core/IndexedView.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/__wctype.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/wctype.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cwctype:
 
+/opt/local/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_uint16_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/errno.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cwchar:
 
@@ -417,13 +1145,17 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_clr.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__hash_table:
 
 /usr/local/include/opencv2/core/bufferpool.hpp:
 
-/usr/local/include/opencv2/core/base.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sched.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/MathFunctions.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/qos.h:
 
@@ -433,9 +1165,25 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/pthread/qos.h:
 
+/opt/local/include/eigen3/Eigen/Jacobi:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/errno.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Transpositions.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/limits.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/MatrixBase.h:
+
+/opt/local/include/ceres/dynamic_cost_function.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/NoAlias.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/select.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h:
 
@@ -443,11 +1191,15 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /usr/local/include/opencv2/opencv_modules.hpp:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_once_t.h:
+/opt/local/include/ceres/sized_cost_function.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_nl_item.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_ino64_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/bit:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/utilities.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
 
@@ -457,109 +1209,161 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/pthread/pthread_impl.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_uint32_t.h:
+/opt/local/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/errno.h:
+/opt/local/include/ceres/covariance.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/ProductEvaluators.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/syslimits.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bsd_locale_defaults.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/limits.h:
+/opt/local/include/ceres/internal/memory.h:
 
 /usr/local/include/opencv2/core/matx.hpp:
 
+/opt/local/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h:
+
 /usr/local/include/opencv2/core/cvstd.hpp:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/climits:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_wint_t.h:
 
-/usr/local/include/opencv2/imgcodecs.hpp:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/arm_fp16.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/climits:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__threading_support:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/pointer_traits.h:
 
+/opt/local/include/eigen3/Eigen/Geometry:
+
+/opt/local/include/ceres/internal/householder_vector.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stdarg.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stdexcept:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/tuple:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/memory:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_zero.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/algorithm:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stdlib.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/new:
+/opt/local/include/eigen3/Eigen/src/Core/Random.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/libkern/_OSByteOrder.h:
 
+/opt/local/include/eigen3/Eigen/src/Core/AssignEvaluator.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_attr_t.h:
+
 /usr/local/include/opencv2/core/cvstd.inl.hpp:
 
+/opt/local/include/ceres/jet.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_endian.h:
+
+/opt/local/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/arch.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_dev_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/resource.h:
 
+/opt/local/include/eigen3/Eigen/src/Core/TriangularMatrix.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/math.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_uid_t.h:
 
+/opt/local/include/eigen3/Eigen/src/Core/StableNorm.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/locale:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/version:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_mode_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/mach/machine/_structs.h:
+/opt/local/include/eigen3/Eigen/src/Core/util/XprHelper.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/_mcontext.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_intptr_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/assert.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream:
+/opt/local/include/eigen3/Eigen/QR:
+
+/opt/local/include/eigen3/Eigen/src/Cholesky/LLT.h:
+
+/opt/local/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_sigset_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_pid_t.h:
 
+/opt/local/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h:
+
+/opt/local/include/ceres/gradient_problem_solver.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/stdlib.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_def.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/libkern/arm/OSByteOrder.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/signal.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_attr_t.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/base.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_intptr_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/atomic:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/utilities.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/exception:
+
+/opt/local/include/eigen3/Eigen/src/Householder/Householder.h:
+
+/usr/local/include/opencv2/core/mat.inl.hpp:
+
+/opt/local/include/eigen3/Eigen/src/Core/functors/StlFunctors.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_rune_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
 
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/arm_neon.h:
+
+/opt/local/include/ceres/ceres.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/wait.h:
 
 /usr/local/include/opencv2/core/persistence.hpp:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int64_t.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iterator:
 
+/opt/local/include/glog/vlog_is_on.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Redux.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstdlib:
+
+/opt/local/include/eigen3/Eigen/src/Core/Reshaped.h:
+
+/opt/local/include/ceres/types.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/xlocale.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/ctype.h:
 
+/opt/local/include/eigen3/Eigen/src/Core/MapBase.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_wctype_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/_types.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_uintptr_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iosfwd:
 
@@ -567,11 +1371,11 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__availability:
 
+/opt/local/include/eigen3/Eigen/src/Core/arch/Default/Settings.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__undef_macros:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_wint_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/errno.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/allocator_traits.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/strings.h:
 
@@ -583,11 +1387,17 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/wchar.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_nl_item.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_uuid_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_ctermid.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_va_list.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/util/StaticAssert.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/Block.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/signal.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/stdio.h:
 
@@ -599,65 +1409,49 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/complex:
 
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stdarg.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/signal.h:
 
 /usr/local/include/opencv2/core/optim.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_clock_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_intmax_t.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/math.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stdio.h:
+
+/opt/local/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_ctype.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_mbstate_t.h:
 
-/usr/local/include/opencv2/core/cvdef.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/wchar.h:
 
-/usr/local/include/opencv2/core/traits.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/runetype.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/pthread/sched.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_rsize_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_zero.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__memory/allocator_traits.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/istream:
+
+/opt/local/include/ceres/internal/reenable_warnings.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_wchar_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/limits.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_symbol_aliasing.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_uintptr_t.h:
-
 /usr/local/include/opencv2/videoio/videoio_c.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/endian.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_in_addr_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__mutex_base:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_size_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__functional_base:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/ctype.h:
 
-/usr/local/include/opencv2/core/neon_utils.hpp:
+/opt/local/include/eigen3/Eigen/src/Core/Select.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/stdio.h:
 
@@ -665,25 +1459,25 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_uint64_t.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_wctype.h:
+
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/limits.h:
 
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/arm_neon.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__tree:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/AvailabilityInternal.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_id_t.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/types.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_stdio.h:
+/opt/local/include/eigen3/Eigen/src/Core/util/Macros.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/AvailabilityVersions.h:
+
+/opt/local/include/ceres/local_parameterization.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string_view:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/Availability.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/initializer_list:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/string.h:
 
@@ -697,7 +1491,9 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstring:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/limits.h:
+/usr/local/include/opencv2/core/types.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cctype:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/appleapiopts.h:
 
@@ -707,9 +1503,11 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /usr/local/include/opencv2/core/ptr.inl.hpp:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int8_t.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/cdefs.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_ct_rune_t.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstddef:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/alloca.h:
 
@@ -719,21 +1517,17 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/malloc/_malloc.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_setsize.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/typeinfo:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_uint8_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int16_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cctype:
+/opt/local/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__debug:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__nullptr:
-
-/usr/local/include/opencv2/core/ovx.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/array:
 
@@ -741,21 +1535,29 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/endian.h:
 
+/opt/local/include/eigen3/Eigen/src/Core/DiagonalProduct.h:
+
+/opt/local/include/ceres/internal/variadic_evaluate.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_sigaltstack.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_timeval.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_types.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_select.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/ArrayBase.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstdint:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/endian.h:
+/opt/local/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/errno.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_inttypes.h:
 
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stdint.h:
+/opt/local/include/eigen3/Eigen/src/Core/util/Meta.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/utility:
+
+/opt/local/include/eigen3/Eigen/src/Core/NumTraits.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/xlocale/_wchar.h:
 
@@ -763,61 +1565,47 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_int32_t.h:
 
-/usr/local/include/opencv2/core/types.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/chrono:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/stdint.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/machine/signal.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int32_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/functional:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_int8_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/system_error:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_off_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_types/_uintmax_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bits:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h:
 
 /usr/local/include/opencv2/core/hal/interface.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/_limits.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/limits.h:
+/opt/local/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/__stddef_max_align_t.h:
 
+/opt/local/include/eigen3/Eigen/src/Geometry/Hyperplane.h:
+
+/opt/local/include/eigen3/Eigen/Cholesky:
+
 /usr/local/include/opencv2/core/core_c.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/arch.h:
-
-../include/Undistort.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/cstddef:
+/opt/local/include/eigen3/Eigen/src/Core/DenseStorage.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/_mcontext.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int64_t.h:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_int16_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/pthread.h:
 
 /usr/local/include/opencv2/core/version.hpp:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_va_list.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_locale.h:
 
@@ -825,13 +1613,15 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_mach_port_t.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/type_traits:
+/opt/local/include/eigen3/Eigen/src/SVD/BDCSVD.h:
 
-/usr/local/include/opencv2/core/mat.inl.hpp:
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/type_traits:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__tuple:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_u_int8_t.h:
+/opt/local/include/eigen3/Eigen/src/Core/IO.h:
+
+/opt/local/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_fd_copy.h:
 
@@ -847,13 +1637,11 @@ CMakeFiles/Undistort.dir/src/Undistort.cpp.o: ../src/Undistort.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/stddef.h:
 
+/opt/local/include/eigen3/Eigen/src/Core/GlobalFunctions.h:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/limits:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/sys/_types/_int16_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/_wctype.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/version:
+/opt/local/include/eigen3/Eigen/src/misc/RealSvd2x2.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/arm/_types.h:
 

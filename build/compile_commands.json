@@ -1,32 +1,32 @@
 [
 {
   "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
-  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp",
+  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -I/usr/include/eigen3 -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/ColorReduction.dir/src/ColorReduction.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp",
   "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ColorReduction.cpp"
 },
 {
   "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
-  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/Dithering.dir/src/Dithering.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp",
+  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -I/usr/include/eigen3 -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/Dithering.dir/src/Dithering.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp",
   "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Dithering.cpp"
 },
 {
   "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
-  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/Undistort.dir/src/Undistort.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Undistort.cpp",
+  "command": "/usr/bin/clang++ -DGFLAGS_IS_A_DLL=0 -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -I/usr/include/eigen3 -isystem /usr/local/include/opencv -isystem /opt/local/include -isystem /opt/local/include/eigen3 -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++14 -o CMakeFiles/Undistort.dir/src/Undistort.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Undistort.cpp",
   "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/Undistort.cpp"
 },
 {
   "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
-  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp",
+  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -I/usr/include/eigen3 -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/main_hw1.dir/src/main_hw1.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp",
   "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw1.cpp"
 },
 {
   "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
-  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/main_hw2.dir/src/main_hw2.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw2.cpp",
+  "command": "/usr/bin/clang++ -DGFLAGS_IS_A_DLL=0 -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -I/usr/include/eigen3 -isystem /usr/local/include/opencv -isystem /opt/local/include -isystem /opt/local/include/eigen3 -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++14 -o CMakeFiles/main_hw2.dir/src/main_hw2.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw2.cpp",
   "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/main_hw2.cpp"
 },
 {
   "directory": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
-  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/ImageSmoothing.dir/src/ImageSmoothing.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ImageSmoothing.cpp",
+  "command": "/usr/bin/clang++  -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -I/usr/include/eigen3 -isystem /usr/local/include/opencv -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -std=gnu++14 -o CMakeFiles/ImageSmoothing.dir/src/ImageSmoothing.cpp.o -c /Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ImageSmoothing.cpp",
   "file": "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/src/ImageSmoothing.cpp"
 }
 ]

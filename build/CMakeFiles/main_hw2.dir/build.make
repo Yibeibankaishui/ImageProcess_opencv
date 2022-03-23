@@ -110,6 +110,21 @@ main_hw2_EXTERNAL_OBJECTS =
 ../bin/main_hw2: /usr/local/lib/libopencv_imgcodecs.3.4.16.dylib
 ../bin/main_hw2: /usr/local/lib/libopencv_imgproc.3.4.16.dylib
 ../bin/main_hw2: /usr/local/lib/libopencv_core.3.4.16.dylib
+../bin/main_hw2: /opt/local/lib/libceres.a
+../bin/main_hw2: /opt/local/lib/libglog.0.5.0.dylib
+../bin/main_hw2: /opt/local/lib/libgflags.2.2.2.dylib
+../bin/main_hw2: /opt/local/lib/libspqr.dylib
+../bin/main_hw2: /opt/local/lib/libcholmod.dylib
+../bin/main_hw2: /opt/local/lib/libccolamd.dylib
+../bin/main_hw2: /opt/local/lib/libcamd.dylib
+../bin/main_hw2: /opt/local/lib/libcolamd.dylib
+../bin/main_hw2: /opt/local/lib/libamd.dylib
+../bin/main_hw2: /opt/local/lib/libsuitesparseconfig.dylib
+../bin/main_hw2: /opt/local/lib/libmetis.dylib
+../bin/main_hw2: /opt/local/lib/libcxsparse.dylib
+../bin/main_hw2: /opt/local/lib/libsuitesparseconfig.dylib
+../bin/main_hw2: /opt/local/lib/libmetis.dylib
+../bin/main_hw2: /opt/local/lib/libcxsparse.dylib
 ../bin/main_hw2: CMakeFiles/main_hw2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/main_hw2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main_hw2.dir/link.txt --verbose=$(VERBOSE)
