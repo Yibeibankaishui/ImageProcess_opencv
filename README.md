@@ -8,3 +8,5 @@ Project of image processing using opencv
 To run the code, use terminal:
 
 ./main_hw1 <test_image_file> <bits>
+
+## Image Undistort
