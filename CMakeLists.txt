@@ -39,10 +39,16 @@ add_executable(main_hw2 src/main_hw2.cpp)
 target_link_libraries(main_hw2 Undistort
                                 ${OpenCV_LIBS})
 
+add_executable(main_hw4 src/main_hw4.cpp)
+target_link_libraries(main_hw4 Hough
+                                ${OpenCV_LIBS})
+
 #   图像平滑
 add_library(ImageSmoothing src/ImageSmoothing.cpp)
 target_link_libraries(ImageSmoothing ${OpenCV_LIBS})
 
-
+#   Hough 变换
+add_library(Hough src/Hough.cpp)
+target_link_libraries(Hough ${OpenCV_LIBS})
 
 
