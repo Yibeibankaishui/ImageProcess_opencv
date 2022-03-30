@@ -13,7 +13,14 @@ namespace hough{
 
 namespace RMWhough{
 
-    void Circle::show(cv::Mat & image){}
+    void Circle::show(cv::Mat & image){   
+        cv::circle(image, Point(xCenter, yCenter), 3, Scalar(0,255,0), -1, 8, 0);    
+        cv::circle(image, Point(xCenter, yCenter), radius, Scalar(0,0,255), 3, 8, 0);
+    }
+
+    int Circle::dist(const Circle & circle){
+        return sqrt( pow(xCenter - circle.xCenter, 2) + pow(yCenter - circle.yCenter, 2) );
+    }
 
     Circle CountMap(const cv::Mat & bin_img, cv::Mat & cntMap, int radius, int dtheta, bool zoom){
 
@@ -65,14 +72,15 @@ namespace RMWhough{
     // threshold : 最小count值的阈值，范围为0-1
     // 邻域大小
     // 假设同一半径的圆不重叠
-    std::vector<Circle> NMS_CountMap(cv::Mat & cntMap, int radius, double threshold, int range){
-        std::vector<Circle> circles;
+    int NMS_CountMap(std::vector<Circle> & circles, cv::Mat & cntMap, int radius, int minCount, double threshold, int range){
+        // std::vector<Circle> circles;
+        int circle_cnt = 0;
         double maxValue;
         cv::Point2i maxPt;
 
         cv::minMaxLoc(cntMap, NULL, &maxValue, NULL, &maxPt);
         // circles.push_back(Circle(maxPt.x, maxPt.y, radius, maxValue));
-        double thresValue = threshold * maxValue;
+        double thresValue = (threshold * maxValue) > minCount ? (threshold * maxValue) : minCount;
 
         // 先去除count值小的部分
         for (int i = 0; i < cntMap.rows; i++){
@@ -82,9 +90,11 @@ namespace RMWhough{
         }
 
         double curMax = maxValue;
-        cv::Point2i curMaxPt;
+        cv::Point2i curMaxPt = maxPt;
         while(curMax > thresValue){
+            cout << curMaxPt << "   " << curMax << endl;
             circles.push_back(Circle(curMaxPt.x, curMaxPt.y, radius, curMax));
+            circle_cnt++;
             // 最大值点邻域清空
             for (int i = curMaxPt.y - range; i < curMaxPt.y + range + 1; i++){
                 for (int j = curMaxPt.x - range; j < curMaxPt.x + range + 1; j++){
@@ -94,7 +104,7 @@ namespace RMWhough{
             cv::minMaxLoc(cntMap, NULL, &curMax, NULL, &curMaxPt);    
         }
 
-        return circles;
+        return circle_cnt;
 
     }
 
@@ -163,6 +173,48 @@ namespace RMWhough{
         return maxCount; 
 
     }
+
+
+    // detect circles
+    // pipeline:
+    // 1. get the CountMap
+    void HoughCircles(const cv::Mat & bin_img, int radius_l, int radius_u, std::vector<Circle> & circles,
+                     int Step, int dtheta, int minCount, double threshold)
+    {
+        for (int curRadius = radius_l; curRadius <= radius_u; curRadius += Step){
+            cv::Mat cntMap;
+            RMWhough::CountMap(bin_img, cntMap, curRadius);
+            // cv::Mat cntMap2 = cntMap.clone();
+            
+            int cnt = RMWhough::NMS_CountMap(circles, cntMap, curRadius, 140, 0.75, curRadius/2);
+        }
+
+        cout << circles.size() << endl;
+    }
+
+
+    std::vector<Circle> NMS_Circles(std::vector<Circle> & circles, int min_dist){
+        std::vector<Circle> circles_NMS= {};
+        int maxCount = 0;
+        Circle maxCircle;
+        for (auto itr = circles.begin(); itr != circles.end(); ){
+            if (itr -> count > maxCount){
+                maxCount = itr -> count;
+                maxCircle = *itr;
+            }
+            itr ++;
+        }
+        circles_NMS.push_back(maxCircle);
+        for (auto itr = circles.begin(); itr != circles.end(); ){
+            if (maxCircle.dist(*itr) < min_dist){
+                circles.erase(itr);
+            }
+            else{
+                itr++;
+            }
+        }
+    }
+
 }
 
 namespace hough_RANSAC{

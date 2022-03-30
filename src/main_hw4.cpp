@@ -36,12 +36,16 @@ int main(int argc, char **argv){
 
     string filename = argv[1];
 
+    // int R = stoi(argv[2]);
+
     input_image = cv::imread(filename, 1);
 
     if (input_image.data == nullptr){
         cerr << "image file " << filename << " NOT found !" << endl;
         return 0;
     }
+
+    vector<RMWhough::Circle> circles;
 
     // preprocess the input image
     // 1. get the gray image
@@ -50,30 +54,38 @@ int main(int argc, char **argv){
     cv::Mat bin_image;
     bin_image = Preprocess(input_image, 0);
 
-    cv::Mat cntMap;
-    RMWhough::CountMap(bin_image, cntMap, 82);
+    // -----------------------HOUGH CIRCLE DETECTION-------------------------
 
-    cv::Mat cntMap2 = cntMap.clone();
-    RMWhough::NMS_CountMap(cntMap2, 82, 0.95);
+    // cv::Mat cntMap;
+    // RMWhough::CountMap(bin_image, cntMap, R);
 
-    cv::Point3i circle;
-    int cnt = RMWhough::RmwHoughCircle(bin_image, 82, circle);
+    // cv::Mat cntMap2 = cntMap.clone();
+    // int circle_cnt = RMWhough::NMS_CountMap(circles, cntMap2, R, 100, 0.75);
 
-    cv::Point center(circle.y, circle.x);
+    RMWhough::HoughCircles(bin_image, 40, 100, circles);
+
+    // cv::Point3i circle;
+    // int cnt = RMWhough::RmwHoughCircle(bin_image, 82, circle);
+
+    // cv::Point center(circle.y, circle.x);
 
     cv::Mat show_image = input_image.clone();
 
-    cv::circle( show_image, center, 3, cv::Scalar(0,255,0), -1, 8, 0 );
+    // cv::circle( show_image, center, 3, cv::Scalar(0,255,0), -1, 8, 0 );
 
-    cv::circle( show_image, center, 82, cv::Scalar(0,0,255), 3, 8, 0 );
+    // cv::circle( show_image, center, 82, cv::Scalar(0,0,255), 3, 8, 0 );
 
-    cout << cnt << endl;
+    // cout << cnt << endl;
+
+    for (auto cir : circles){
+        cir.show(show_image);
+    }    
 
 
     cv::imshow("bin", bin_image);
     cv::imshow("circle", show_image);
-    cv::imshow("cntMap", cntMap);
-    cv::imshow("cntMap2", cntMap2);
+    // cv::imshow("cntMap", cntMap);
+    // cv::imshow("cntMap2", cntMap2);
 
 
     // // pipleline of Hough Circle using OpenCV
