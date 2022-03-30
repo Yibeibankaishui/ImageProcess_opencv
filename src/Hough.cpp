@@ -3,6 +3,8 @@
 using namespace std;    
 using namespace cv;
 
+const double PI = 3.1415926;
+
 namespace hough{
     
     void HoughCircles(const cv::Mat & bin_img, std::vector<cv::Vec3f> & circles){}
@@ -11,21 +13,63 @@ namespace hough{
 
 namespace RMWhough{
 
-    int RmwHoughCircle(const cv::Mat & bin_img, int radius, std::vector<cv::Point3d> circle, double dtheta){
+    int RmwHoughCircle(const cv::Mat & bin_img, int radius, cv::Point3i & circle, int dtheta){
         const int width = bin_img.cols;
         const int height = bin_img.rows;
 
         int *pCount = new int[width * height];
+        int *x0 = new int;
+        int *y0 = new int;
+        int *pCur;
+        int X0_pre, Y0_pre;
+        int cost, sint;
+        int maxCount;
         memset(pCount, 0, width * height * sizeof(int));
 
         for (int theta = 0; theta < 360; theta += dtheta){
 
-        }
-        for (int i = 0; i < height; i++){
-            for (int j = 0; j < width; j++){
-                bin_img.at<uchar>(i,j);
+            cost = (int)(cos(theta * PI / 180) * 2048);
+            sint = (int)(sin(theta * PI / 180) * 2048);
+
+            for (int i = 0; i < height; i++){
+                for (int j = 0; j < width; j++){
+
+                    if (bin_img.at<uchar>(i, j) != 0){
+                        X0_pre = j - ((radius * cost) >> 11);
+                        if ((X0_pre < 0) || (X0_pre > width - 1)) continue;
+                        Y0_pre = i - ((radius * sint) >> 11);
+                        if ((Y0_pre < 0) || (Y0_pre > height - 1)) continue;
+                        pCount[X0_pre * width + Y0_pre] += 1;
+
+                    }
+                }
             }
         }
+
+
+        *x0 = *y0 = maxCount = 0;
+
+        for (Y0_pre = 0, pCur = pCount; Y0_pre < height; Y0_pre++)
+        {
+            for (X0_pre = 0; X0_pre < width; X0_pre++, pCur++)
+            {
+                if (*pCur > maxCount)
+                {
+                    maxCount = *pCur;
+                    *x0 = X0_pre;
+                    *y0 = Y0_pre;
+                }
+            }
+        }
+ 
+        circle = cv::Point3i(*x0, *y0, radius);
+
+        delete [] pCount;
+        delete x0;
+        delete y0;
+
+        return maxCount; 
+
     }
 }
 

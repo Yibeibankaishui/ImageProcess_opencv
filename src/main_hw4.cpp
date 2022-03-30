@@ -18,8 +18,10 @@ cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
         // cv::imshow("in", input_image);
         cv::imshow("gray", gray);
         cv::imshow("blur", blur_image);
+        cv::waitKey(0);
 
     }
+
 
 
     return edge_image;
@@ -46,9 +48,24 @@ int main(int argc, char **argv){
     // 2. blur the image
     // 3. detect edges using Cannt and get the binary image
     cv::Mat bin_image;
-    bin_image = Preprocess(input_image, 1);
+    bin_image = Preprocess(input_image, 0);
+
+    cv::Point3i circle;
+    int cnt = RMWhough::RmwHoughCircle(bin_image, 82, circle);
+
+    cv::Point center(circle.y, circle.x);
+
+    cv::Mat show_image = input_image.clone();
+
+    cv::circle( show_image, center, 3, cv::Scalar(0,255,0), -1, 8, 0 );
+
+    cv::circle( show_image, center, 82, cv::Scalar(0,0,255), 3, 8, 0 );
+
+    cout << cnt << endl;
+
 
     cv::imshow("bin", bin_image);
+    cv::imshow("circle", show_image);
 
 
 

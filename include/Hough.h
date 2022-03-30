@@ -30,9 +30,19 @@ namespace RMWhough{
     // 滤波
     // 边缘检测
     // 二值化
-    
+    class Circle{
+        public:
+            int xCenter;
+            int yCenter;
+            int radius;
+
+        public:
+            void show();
+    }
+
+
     // 输入二值边缘图像
-    int RmwHoughCircle(const cv::Mat & bin_img, int radius, std::vector<cv::Point3d> circle, double dtheta = 1.0);
+    int RmwHoughCircle(const cv::Mat & bin_img, int radius, cv::Point3i & circle, int dtheta = 1);
     // int RmwCircleX0(BYTE *pBinImg, int width, int height, int *x0);
     // int RmwCircleY0(BYTE *pBinImg, int width, int height, int *y0);
 }
