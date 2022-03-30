@@ -13,6 +13,50 @@ namespace hough{
 
 namespace RMWhough{
 
+    Circle CountMap(const cv::Mat & bin_img, cv::Mat & cntMap, int radius, int dtheta){
+
+        const int width = bin_img.cols;
+        const int height = bin_img.rows;
+
+        cntMap = cv::Mat::zeros(height, width, CV_8UC1);
+
+        int X0_pre, Y0_pre;
+        int cost, sint;
+        double maxValue = 0;
+        cv::Point2i maxPt;
+
+        for (int theta = 0; theta < 360; theta += dtheta){
+
+            // 用int进行计算
+            cost = (int)(cos(theta * PI / 180) * 2048);
+            sint = (int)(sin(theta * PI / 180) * 2048);
+
+            for (int i = 0; i < height; i++){
+                for (int j = 0; j < width; j++){
+
+                    if (bin_img.at<uchar>(i, j) != 0){
+                        // 移位代替除法
+                        X0_pre = j - ((radius * cost) >> 11);
+                        // 去除异常点
+                        if ((X0_pre < 0) || (X0_pre > width - 1)) continue;
+                        Y0_pre = i - ((radius * sint) >> 11);
+                        // 去除异常点
+                        if ((Y0_pre < 0) || (Y0_pre > height - 1)) continue;
+                        // 计数器递增
+                        cntMap.at<uchar>(Y0_pre, X0_pre) += 1;
+                        
+                    }
+                }
+            }
+        }
+
+        cv::minMaxLoc(cntMap, NULL, &maxValue, NULL, &maxPt);
+        cntMap = cntMap*255/maxValue;
+
+        return Circle(maxPt.x, maxPt.y, radius, maxValue);
+
+    }        
+
     int RmwHoughCircle(const cv::Mat & bin_img, int radius, cv::Point3i & circle, int dtheta){
         const int width = bin_img.cols;
         const int height = bin_img.rows;
@@ -28,6 +72,7 @@ namespace RMWhough{
 
         for (int theta = 0; theta < 360; theta += dtheta){
 
+            // 用int进行计算
             cost = (int)(cos(theta * PI / 180) * 2048);
             sint = (int)(sin(theta * PI / 180) * 2048);
 
@@ -35,10 +80,14 @@ namespace RMWhough{
                 for (int j = 0; j < width; j++){
 
                     if (bin_img.at<uchar>(i, j) != 0){
+                        // 移位代替除法
                         X0_pre = j - ((radius * cost) >> 11);
+                        // 去除异常点
                         if ((X0_pre < 0) || (X0_pre > width - 1)) continue;
                         Y0_pre = i - ((radius * sint) >> 11);
+                        // 去除异常点
                         if ((Y0_pre < 0) || (Y0_pre > height - 1)) continue;
+                        // 计数器递增
                         pCount[X0_pre * width + Y0_pre] += 1;
 
                     }

@@ -35,20 +35,20 @@ namespace RMWhough{
             int xCenter;
             int yCenter;
             int radius;
-            cv::Mat * image;
+            int count;
 
         public:
             Circle() {}
-            Circle(int xc, int yc, int r, cv::Mat *img) : xCenter(xc), yCenter(yc), radius(r), image(img) { }
+            Circle(int xc, int yc, int r, int cnt) : xCenter(xc), yCenter(yc), radius(r), count(cnt) { }
             ~Circle() {}
-            void show();
+            void show(cv::Mat & image);
     };
 
-
+    void HoughCircles(const cv::Mat & bin_img, int radius_l, int radius_u, std::vector<Circle> circles, int dtheta = 1);
     // 输入二值边缘图像
     int RmwHoughCircle(const cv::Mat & bin_img, int radius, cv::Point3i & circle, int dtheta = 1);
-    // int RmwCircleX0(BYTE *pBinImg, int width, int height, int *x0);
-    // int RmwCircleY0(BYTE *pBinImg, int width, int height, int *y0);
+    // count图像
+    Circle CountMap(const cv::Mat & bin_img, cv::Mat & cntMap, int radius, int dtheta = 1);
 }
 
 namespace hough_RANSAC{

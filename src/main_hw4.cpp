@@ -50,6 +50,9 @@ int main(int argc, char **argv){
     cv::Mat bin_image;
     bin_image = Preprocess(input_image, 0);
 
+    cv::Mat cntMap;
+    RMWhough::CountMap(bin_image, cntMap, 82);
+
     cv::Point3i circle;
     int cnt = RMWhough::RmwHoughCircle(bin_image, 82, circle);
 
@@ -66,6 +69,7 @@ int main(int argc, char **argv){
 
     cv::imshow("bin", bin_image);
     cv::imshow("circle", show_image);
+    cv::imshow("cntMap", cntMap);
 
 
 
