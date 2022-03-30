@@ -64,6 +64,9 @@ int main(int argc, char **argv){
 
     RMWhough::HoughCircles(bin_image, 40, 100, circles);
 
+    vector<RMWhough::Circle> circles_NMS = {};
+    circles_NMS = RMWhough::NMS_Circles(circles);
+
     // cv::Point3i circle;
     // int cnt = RMWhough::RmwHoughCircle(bin_image, 82, circle);
 
@@ -77,7 +80,7 @@ int main(int argc, char **argv){
 
     // cout << cnt << endl;
 
-    for (auto cir : circles){
+    for (auto cir : circles_NMS){
         cir.show(show_image);
     }    
 

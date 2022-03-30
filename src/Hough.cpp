@@ -195,24 +195,34 @@ namespace RMWhough{
 
     std::vector<Circle> NMS_Circles(std::vector<Circle> & circles, int min_dist){
         std::vector<Circle> circles_NMS= {};
-        int maxCount = 0;
-        Circle maxCircle;
-        for (auto itr = circles.begin(); itr != circles.end(); ){
-            if (itr -> count > maxCount){
-                maxCount = itr -> count;
-                maxCircle = *itr;
+
+        while(!circles.empty()){
+
+            int maxCount = 0;
+            Circle maxCircle;
+            // find max
+            for (auto itr = circles.begin(); itr != circles.end(); ){
+                if (itr -> count > maxCount){
+                    maxCount = itr -> count;
+                    maxCircle = *itr;
+                }
+                itr ++;
             }
-            itr ++;
+            // push to the new vector
+            circles_NMS.push_back(maxCircle);
+            // delete old ones
+            for (auto itr = circles.begin(); itr != circles.end(); ){
+                if (maxCircle.dist(*itr) < min_dist){
+                    circles.erase(itr);
+                }
+                else{
+                    itr++;
+                }
+            }
         }
-        circles_NMS.push_back(maxCircle);
-        for (auto itr = circles.begin(); itr != circles.end(); ){
-            if (maxCircle.dist(*itr) < min_dist){
-                circles.erase(itr);
-            }
-            else{
-                itr++;
-            }
-        }
+
+
+        return circles_NMS;
     }
 
 }
