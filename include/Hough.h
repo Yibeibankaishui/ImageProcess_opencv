@@ -35,10 +35,14 @@ namespace RMWhough{
             int xCenter;
             int yCenter;
             int radius;
+            cv::Mat * image;
 
         public:
+            Circle() {}
+            Circle(int xc, int yc, int r, cv::Mat *img) : xCenter(xc), yCenter(yc), radius(r), image(img) { }
+            ~Circle() {}
             void show();
-    }
+    };
 
 
     // 输入二值边缘图像
