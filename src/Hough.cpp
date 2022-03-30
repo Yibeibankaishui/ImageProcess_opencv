@@ -5,17 +5,13 @@ using namespace cv;
 
 const double PI = 3.1415926;
 
+
 namespace hough{
-    
-    void HoughCircles(const cv::Mat & bin_img, std::vector<cv::Vec3f> & circles){}
-
-}
-
-namespace RMWhough{
 
     void Circle::show(cv::Mat & image){   
         cv::circle(image, Point(xCenter, yCenter), 3, Scalar(0,255,0), -1, 8, 0);    
         cv::circle(image, Point(xCenter, yCenter), radius, Scalar(0,0,255), 3, 8, 0);
+        cout << "Circle:  [" << xCenter << " , " << yCenter << "]  radius :  " << radius << endl;
     }
 
     int Circle::dist(const Circle & circle){
@@ -68,7 +64,7 @@ namespace RMWhough{
 
 
 
-    // 用非极大值抑制去除相距太近的圆心
+    // 在一个半径对应的一个count map中用非极大值抑制去除相距太近的圆心
     // threshold : 最小count值的阈值，范围为0-1
     // 邻域大小
     // 假设同一半径的圆不重叠
@@ -176,23 +172,22 @@ namespace RMWhough{
 
 
     // detect circles
-    // pipeline:
-    // 1. get the CountMap
     void HoughCircles(const cv::Mat & bin_img, int radius_l, int radius_u, std::vector<Circle> & circles,
                      int Step, int dtheta, int minCount, double threshold)
     {
         for (int curRadius = radius_l; curRadius <= radius_u; curRadius += Step){
             cv::Mat cntMap;
-            RMWhough::CountMap(bin_img, cntMap, curRadius);
+            CountMap(bin_img, cntMap, curRadius);
             // cv::Mat cntMap2 = cntMap.clone();
             
-            int cnt = RMWhough::NMS_CountMap(circles, cntMap, curRadius, 140, 0.75, curRadius/2);
+            int cnt = NMS_CountMap(circles, cntMap, curRadius, 140, 0.75, curRadius/2);
         }
 
-        cout << circles.size() << endl;
+        // cout << circles.size() << endl;
     }
 
 
+    // 对得到的circles 向量进行极大值抑制，在一个区域内只保留count值最大的圆心点对应的圆
     std::vector<Circle> NMS_Circles(std::vector<Circle> & circles, int min_dist){
         std::vector<Circle> circles_NMS= {};
 
@@ -221,12 +216,13 @@ namespace RMWhough{
             }
         }
 
-
+        cout << "total circles:  " << circles_NMS.size() << endl;
         return circles_NMS;
     }
 
 }
 
+// 
 namespace hough_RANSAC{
 
 
