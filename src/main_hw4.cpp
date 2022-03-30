@@ -92,11 +92,7 @@ int main(int argc, char **argv){
     // cv::imshow("cntMap2", cntMap2);
 
     cv::waitKey(0);
-
-
-
-    // show image
-
+    cv::imwrite("HoughOut.jpg", show_image);
 
     return 0;
 }
