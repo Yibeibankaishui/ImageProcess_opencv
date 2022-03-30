@@ -80,5 +80,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Undistort.dir/DependInfo.cmake"
   "CMakeFiles/main_hw1.dir/DependInfo.cmake"
   "CMakeFiles/main_hw2.dir/DependInfo.cmake"
+  "CMakeFiles/main_hw4.dir/DependInfo.cmake"
   "CMakeFiles/ImageSmoothing.dir/DependInfo.cmake"
+  "CMakeFiles/Hough.dir/DependInfo.cmake"
   )

@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.19"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ImageProcessOpencv",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ColorReduction::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ColorReduction-Debug-b8ca26de78a9c2a3e470.json",
+					"name" : "ColorReduction",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Dithering::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Dithering-Debug-131e13e648617427bf75.json",
+					"name" : "Dithering",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Hough::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Hough-Debug-529a48139f1083c5d918.json",
+					"name" : "Hough",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ImageSmoothing::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ImageSmoothing-Debug-af7b4a46d618d4ed7ad5.json",
+					"name" : "ImageSmoothing",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Undistort::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Undistort-Debug-ef8027197b0f7c0c4533.json",
+					"name" : "Undistort",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main_hw1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main_hw1-Debug-a650cb91c670f6aa0a5c.json",
+					"name" : "main_hw1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main_hw2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main_hw2-Debug-111f7594dcd0ab9111b7.json",
+					"name" : "main_hw2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main_hw4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main_hw4-Debug-616d1a2ccd7952135d37.json",
+					"name" : "main_hw4",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build",
+		"source" : "/Users/yibeibankaishui/Desktop/ImageProcess_opencv"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

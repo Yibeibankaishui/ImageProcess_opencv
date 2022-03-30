@@ -5,7 +5,7 @@ using namespace std;
 
 namespace ImageSmoothing{
 
-        // 一般方法的均值滤波器
+    // 一般方法的均值滤波器
     cv::Mat AverageFilter(const cv::Mat & input_img, int kernel_w, int kernel_h){
 
     }

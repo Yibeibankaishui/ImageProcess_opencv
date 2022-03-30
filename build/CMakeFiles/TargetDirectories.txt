@@ -3,6 +3,8 @@
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/Undistort.dir
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/main_hw1.dir
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/main_hw2.dir
+/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/main_hw4.dir
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/ImageSmoothing.dir
+/Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/Hough.dir
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/edit_cache.dir
 /Users/yibeibankaishui/Desktop/ImageProcess_opencv/build/CMakeFiles/rebuild_cache.dir

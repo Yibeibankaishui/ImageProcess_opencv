@@ -6,7 +6,7 @@ CXX_DEFINES = -DGFLAGS_IS_A_DLL=0
 
 CXX_INCLUDES = -I/Users/yibeibankaishui/Desktop/ImageProcess_opencv/include -I/usr/include/eigen3 -isystem /usr/local/include/opencv -isystem /opt/local/include -isystem /opt/local/include/eigen3
 
-CXX_FLAGSarm64 = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++14
+CXX_FLAGSarm64 = -g -arch arm64 -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++14
 
-CXX_FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++14
+CXX_FLAGS = -g -arch arm64 -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++14
 

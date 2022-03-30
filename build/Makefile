@@ -182,6 +182,19 @@ main_hw2/fast:
 .PHONY : main_hw2/fast
 
 #=============================================================================
+# Target rules for targets named main_hw4
+
+# Build rule for target.
+main_hw4: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_hw4
+.PHONY : main_hw4
+
+# fast build rule for target.
+main_hw4/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw4.dir/build.make CMakeFiles/main_hw4.dir/build
+.PHONY : main_hw4/fast
+
+#=============================================================================
 # Target rules for targets named ImageSmoothing
 
 # Build rule for target.
@@ -193,6 +206,19 @@ ImageSmoothing: cmake_check_build_system
 ImageSmoothing/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ImageSmoothing.dir/build.make CMakeFiles/ImageSmoothing.dir/build
 .PHONY : ImageSmoothing/fast
+
+#=============================================================================
+# Target rules for targets named Hough
+
+# Build rule for target.
+Hough: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Hough
+.PHONY : Hough
+
+# fast build rule for target.
+Hough/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hough.dir/build.make CMakeFiles/Hough.dir/build
+.PHONY : Hough/fast
 
 src/ColorReduction.o: src/ColorReduction.cpp.o
 .PHONY : src/ColorReduction.o
@@ -241,6 +267,30 @@ src/Dithering.s: src/Dithering.cpp.s
 src/Dithering.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Dithering.dir/build.make CMakeFiles/Dithering.dir/src/Dithering.cpp.s
 .PHONY : src/Dithering.cpp.s
+
+src/Hough.o: src/Hough.cpp.o
+.PHONY : src/Hough.o
+
+# target to build an object file
+src/Hough.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hough.dir/build.make CMakeFiles/Hough.dir/src/Hough.cpp.o
+.PHONY : src/Hough.cpp.o
+
+src/Hough.i: src/Hough.cpp.i
+.PHONY : src/Hough.i
+
+# target to preprocess a source file
+src/Hough.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hough.dir/build.make CMakeFiles/Hough.dir/src/Hough.cpp.i
+.PHONY : src/Hough.cpp.i
+
+src/Hough.s: src/Hough.cpp.s
+.PHONY : src/Hough.s
+
+# target to generate assembly for a file
+src/Hough.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hough.dir/build.make CMakeFiles/Hough.dir/src/Hough.cpp.s
+.PHONY : src/Hough.cpp.s
 
 src/ImageSmoothing.o: src/ImageSmoothing.cpp.o
 .PHONY : src/ImageSmoothing.o
@@ -338,6 +388,30 @@ src/main_hw2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw2.dir/build.make CMakeFiles/main_hw2.dir/src/main_hw2.cpp.s
 .PHONY : src/main_hw2.cpp.s
 
+src/main_hw4.o: src/main_hw4.cpp.o
+.PHONY : src/main_hw4.o
+
+# target to build an object file
+src/main_hw4.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw4.dir/build.make CMakeFiles/main_hw4.dir/src/main_hw4.cpp.o
+.PHONY : src/main_hw4.cpp.o
+
+src/main_hw4.i: src/main_hw4.cpp.i
+.PHONY : src/main_hw4.i
+
+# target to preprocess a source file
+src/main_hw4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw4.dir/build.make CMakeFiles/main_hw4.dir/src/main_hw4.cpp.i
+.PHONY : src/main_hw4.cpp.i
+
+src/main_hw4.s: src/main_hw4.cpp.s
+.PHONY : src/main_hw4.s
+
+# target to generate assembly for a file
+src/main_hw4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_hw4.dir/build.make CMakeFiles/main_hw4.dir/src/main_hw4.cpp.s
+.PHONY : src/main_hw4.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -348,16 +422,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ColorReduction"
 	@echo "... Dithering"
+	@echo "... Hough"
 	@echo "... ImageSmoothing"
 	@echo "... Undistort"
 	@echo "... main_hw1"
 	@echo "... main_hw2"
+	@echo "... main_hw4"
 	@echo "... src/ColorReduction.o"
 	@echo "... src/ColorReduction.i"
 	@echo "... src/ColorReduction.s"
 	@echo "... src/Dithering.o"
 	@echo "... src/Dithering.i"
 	@echo "... src/Dithering.s"
+	@echo "... src/Hough.o"
+	@echo "... src/Hough.i"
+	@echo "... src/Hough.s"
 	@echo "... src/ImageSmoothing.o"
 	@echo "... src/ImageSmoothing.i"
 	@echo "... src/ImageSmoothing.s"
@@ -370,6 +449,9 @@ help:
 	@echo "... src/main_hw2.o"
 	@echo "... src/main_hw2.i"
 	@echo "... src/main_hw2.s"
+	@echo "... src/main_hw4.o"
+	@echo "... src/main_hw4.i"
+	@echo "... src/main_hw4.s"
 .PHONY : help
 
 
