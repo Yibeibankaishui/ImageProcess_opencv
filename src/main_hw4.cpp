@@ -36,7 +36,18 @@ int main(int argc, char **argv){
 
     string filename = argv[1];
 
-    // int R = stoi(argv[2]);
+    int R_min = stoi(argv[2]);
+    int R_max = stoi(argv[3]);
+
+    int Step = 2;
+    int dtheta = 1;
+
+    if (argc > 3){
+        int Step = stoi(argv[4]);
+    }
+    if (argc > 4){
+        int dtheta = stoi(argv[5]);
+    }
 
     input_image = cv::imread(filename, 1);
 
@@ -62,7 +73,7 @@ int main(int argc, char **argv){
     // cv::Mat cntMap2 = cntMap.clone();
     // int circle_cnt = RMWhough::NMS_CountMap(circles, cntMap2, R, 100, 0.75);
 
-    RMWhough::HoughCircles(bin_image, 40, 100, circles);
+    RMWhough::HoughCircles(bin_image, R_min, R_max, circles, Step, dtheta);
 
     vector<RMWhough::Circle> circles_NMS = {};
     circles_NMS = RMWhough::NMS_Circles(circles);

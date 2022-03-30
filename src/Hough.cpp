@@ -92,7 +92,7 @@ namespace RMWhough{
         double curMax = maxValue;
         cv::Point2i curMaxPt = maxPt;
         while(curMax > thresValue){
-            cout << curMaxPt << "   " << curMax << endl;
+            // cout << curMaxPt << "   " << curMax << endl;
             circles.push_back(Circle(curMaxPt.x, curMaxPt.y, radius, curMax));
             circle_cnt++;
             // 最大值点邻域清空
