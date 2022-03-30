@@ -13,7 +13,9 @@ namespace hough{
 
 namespace RMWhough{
 
-    Circle CountMap(const cv::Mat & bin_img, cv::Mat & cntMap, int radius, int dtheta){
+    void Circle::show(cv::Mat & image){}
+
+    Circle CountMap(const cv::Mat & bin_img, cv::Mat & cntMap, int radius, int dtheta, bool zoom){
 
         const int width = bin_img.cols;
         const int height = bin_img.rows;
@@ -51,11 +53,52 @@ namespace RMWhough{
         }
 
         cv::minMaxLoc(cntMap, NULL, &maxValue, NULL, &maxPt);
-        cntMap = cntMap*255/maxValue;
+        if (zoom) {cntMap = cntMap*255/maxValue;}
 
         return Circle(maxPt.x, maxPt.y, radius, maxValue);
 
     }        
+
+
+
+    // 用非极大值抑制去除相距太近的圆心
+    // threshold : 最小count值的阈值，范围为0-1
+    // 邻域大小
+    // 假设同一半径的圆不重叠
+    std::vector<Circle> NMS_CountMap(cv::Mat & cntMap, int radius, double threshold, int range){
+        std::vector<Circle> circles;
+        double maxValue;
+        cv::Point2i maxPt;
+
+        cv::minMaxLoc(cntMap, NULL, &maxValue, NULL, &maxPt);
+        // circles.push_back(Circle(maxPt.x, maxPt.y, radius, maxValue));
+        double thresValue = threshold * maxValue;
+
+        // 先去除count值小的部分
+        for (int i = 0; i < cntMap.rows; i++){
+            for (int j = 0; j < cntMap.cols; j++){
+                cntMap.at<uchar>(i, j) = cntMap.at<uchar>(i, j) > (thresValue) ? cntMap.at<uchar>(i, j) : 0;
+            }
+        }
+
+        double curMax = maxValue;
+        cv::Point2i curMaxPt;
+        while(curMax > thresValue){
+            circles.push_back(Circle(curMaxPt.x, curMaxPt.y, radius, curMax));
+            // 最大值点邻域清空
+            for (int i = curMaxPt.y - range; i < curMaxPt.y + range + 1; i++){
+                for (int j = curMaxPt.x - range; j < curMaxPt.x + range + 1; j++){
+                    cntMap.at<uchar>(i, j) = 0;
+                }
+            }
+            cv::minMaxLoc(cntMap, NULL, &curMax, NULL, &curMaxPt);    
+        }
+
+        return circles;
+
+    }
+
+
 
     int RmwHoughCircle(const cv::Mat & bin_img, int radius, cv::Point3i & circle, int dtheta){
         const int width = bin_img.cols;

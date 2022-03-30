@@ -48,7 +48,10 @@ namespace RMWhough{
     // 输入二值边缘图像
     int RmwHoughCircle(const cv::Mat & bin_img, int radius, cv::Point3i & circle, int dtheta = 1);
     // count图像
-    Circle CountMap(const cv::Mat & bin_img, cv::Mat & cntMap, int radius, int dtheta = 1);
+    Circle CountMap(const cv::Mat & bin_img, cv::Mat & cntMap, int radius, int dtheta = 1, bool zoom = false);
+    // 用非极大值抑制去除相距太近的圆心
+    std::vector<Circle> NMS_CountMap(cv::Mat & cntMap, int radius, double threshold=0.8, int range=5);
+    //
 }
 
 namespace hough_RANSAC{

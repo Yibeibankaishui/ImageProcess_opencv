@@ -53,6 +53,9 @@ int main(int argc, char **argv){
     cv::Mat cntMap;
     RMWhough::CountMap(bin_image, cntMap, 82);
 
+    cv::Mat cntMap2 = cntMap.clone();
+    RMWhough::NMS_CountMap(cntMap2, 82, 0.95);
+
     cv::Point3i circle;
     int cnt = RMWhough::RmwHoughCircle(bin_image, 82, circle);
 
@@ -70,7 +73,7 @@ int main(int argc, char **argv){
     cv::imshow("bin", bin_image);
     cv::imshow("circle", show_image);
     cv::imshow("cntMap", cntMap);
-
+    cv::imshow("cntMap2", cntMap2);
 
 
     // // pipleline of Hough Circle using OpenCV
