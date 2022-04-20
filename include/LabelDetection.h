@@ -18,7 +18,9 @@
 enum label {missing, broken, skewed, intact};
 
 namespace LabelDetector{
-    label label_detect(const cv::Mat & input_image);
+    std::vector<label> label_detect(const cv::Mat & input_image, const std::vector<cv::Rect> & ROIs);
+
+    label label_detect(const cv::Mat & input_image, const cv::Rect & ROI);
 
     void drawROIs(const cv::Mat & srcImg, cv::Mat & dstImg, std::vector<cv::Rect> ROIs);
 

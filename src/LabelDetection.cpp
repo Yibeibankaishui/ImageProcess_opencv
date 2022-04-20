@@ -4,8 +4,36 @@
 
 namespace LabelDetector{
 
-    label label_detect(const cv::Mat & input_image){
+    std::vector<label> label_detect(const cv::Mat & input_image, const std::vector<cv::Rect> & ROIs){
 
+        std::vector<label> lb_vec;
+        for (auto itr = ROIs.begin(); itr != ROIs.end();){
+            label lb = label_detect(input_image, *itr);
+            lb_vec.push_back(lb);
+            itr++;
+        }
+
+        return lb_vec;
+    }
+
+
+    label label_detect(const cv::Mat & input_image, const cv::Rect & ROI){
+
+        cv::Mat M_ROI = input_image(ROI);
+        int rows_ROI = M_ROI.rows;
+        int cols_ROI = M_ROI.cols;
+
+        int cnt = 0;
+
+        for (int i = 60; i < 90; i++){
+            cnt += cv::sum(M_ROI.row(i))[0]/255;
+            // std::cout << i << "  " << cv::sum(M_ROI.row(i))[0]/255 << std::endl;
+        }
+        if (cnt < 80){
+            std::cout << "missing" << std::endl;
+            return missing;
+        }
+        std::cout << "intact" << std::endl;
         return intact;
     }
 

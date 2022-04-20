@@ -76,6 +76,8 @@ int main(int argc, char **argv){
         ROIs.push_back(cv::Rect(width/5 * (i) + dx, height/2 + dy, width/5 - dx,height/2 - dy*2));
     }
 
+    LabelDetector::label_detect(edge_image, ROIs);
+
     cv::Mat output_image;
     LabelDetector::drawROIs(input_image, output_image, ROIs);
 
@@ -90,13 +92,16 @@ int main(int argc, char **argv){
     // SHOW IMAGES
     cv::imshow("input", input_image);
     cv::imshow("output", output_image);
+    cv::imshow("edge", edge_image);
+
+    // cout << edge_image << endl;
 
     cv::waitKey(0);
 
-    for (auto itr = ROIs.begin(); itr != ROIs.end();itr++){
-        cv::imshow("roi", edge_image(*itr));
-        cv::waitKey(0);
-    }
+    // for (auto itr = ROIs.begin(); itr != ROIs.end();itr++){
+    //     cv::imshow("roi", edge_image(*itr));
+    //     cv::waitKey(0);
+    // }
 
 
     return EXIT_SUCCESS;
