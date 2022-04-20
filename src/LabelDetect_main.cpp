@@ -7,13 +7,52 @@ using namespace std;
 
 cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
 
-    cv::Mat gray;
-    cv::cvtColor(input_image, gray, cv::COLOR_BGR2GRAY);
+    // 直方图均衡化
+    // cv::Mat enhanced_image;
 
-    cv::Mat blur_image = gray.clone();
+	// cv::Mat imageRGB[3];
+	// cv::split(input_image, imageRGB);
+	// for (int i = 0; i < 3; i++)
+	// {
+	// 	cv::equalizeHist(imageRGB[i], imageRGB[i]);
+	// }
+	// cv::merge(imageRGB, 3, enhanced_image);
 
+    // gaussian
+    cv::Mat blur_image;
+    cv::GaussianBlur(input_image, blur_image, cv::Size(7,7), 0, 0);
+
+    cv::imshow("blur_image", blur_image);
+
+    // binary
+    cv::Mat bin_image;
+    cv::threshold(input_image, bin_image, 45, 255, cv::THRESH_TOZERO);
+    cv::imshow("bin_image", bin_image);
+
+    cv::Mat hsv_image;
+    cv::cvtColor(bin_image, hsv_image, cv::COLOR_RGB2HSV);
+
+    std::vector<cv::Mat> HSV;
+    cv::split(hsv_image, HSV);
+    // cv::imshow("V", HSV[0]);
+    cv::imshow("S", HSV[1]);
+    // cv::imshow("H", HSV[2]);
+
+    cv::waitKey(0);
+
+    cv::Mat gray_image;
+    cv::cvtColor(input_image, gray_image, cv::COLOR_BGR2GRAY);
+
+    // 改进边缘检测:
+    // 尝试在多通道上做canny
     cv::Mat edge_image;
-    cv::Canny(blur_image, edge_image, 100, 230); 
+    // S通道
+    cv::Mat S_edge_image;
+    cv::Mat gray_edge_image;
+    cv::Canny(HSV[1], S_edge_image, 250, 360);
+    cv::Canny(gray_image, gray_edge_image, 100, 230); 
+    // 最后用或运算
+    cv::bitwise_or(S_edge_image, gray_edge_image, edge_image);
 
 
     // cv::Mat grad_x, grad_y;
@@ -28,14 +67,15 @@ cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
 
 
     if (ifshow){
-
-        cv::imshow("gray_image", gray);
-        cv::imwrite("../images/gray.jpg", gray);
+        // cv::imshow("enhanced_image", enhanced_image); 
+        cv::imshow("gray_image", gray_image);
+        // cv::imwrite("../images/gray.jpg", gray);
         // cv::imshow("blur", blur_image);
+        cv::imshow("S_edge_image", S_edge_image);
+        cv::imshow("gray_edge_image", gray_edge_image);
         cv::imshow("edge_image", edge_image);
-        cv::imwrite("../images/edge_image.jpg", edge_image);
+        // cv::imwrite("../images/edge_image.jpg", edge_image);
         cv::waitKey(0);
-
     }
 
     return edge_image;
@@ -58,7 +98,7 @@ int main(int argc, char **argv){
     }
 
     cv::Mat edge_image;
-    edge_image = Preprocess(input_image, 0);
+    edge_image = Preprocess(input_image, 1);
 
     int height = edge_image.rows;
     int width = edge_image.cols;
@@ -85,7 +125,13 @@ int main(int argc, char **argv){
     chrono::duration<double> time_used = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
     cout << "time used:   " << time_used.count() << "  seconds. " << endl;
 
-
+    // hough line BAD
+    // vector<cv::Vec4i> lines;
+    // cv::HoughLinesP(edge_image, lines, 1, CV_PI/45, 50, 50, 10);
+    // for ( int i = 0; i < lines.size(); i++ ){
+    //     cv::Vec4i l = lines[i];
+    //     cv::line(output_image, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]), cv::Scalar(0, 255, 255), 1, cv::LINE_AA);
+    // }
 
 
 
