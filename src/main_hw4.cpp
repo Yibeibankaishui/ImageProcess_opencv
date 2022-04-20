@@ -15,8 +15,11 @@ cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
     cv::Canny(blur_image, edge_image, 160, 320);
     if (ifshow){
 
-        cv::imshow("gray", gray);
-        cv::imshow("blur", blur_image);
+        cv::imshow("gray_image", gray);
+        cv::imwrite("../images/gray.jpg", gray);
+        // cv::imshow("blur", blur_image);
+        cv::imshow("edge_image", edge_image);
+        cv::imwrite("../images/edge_image.jpg", edge_image);
         cv::waitKey(0);
 
     }
@@ -67,16 +70,17 @@ int main(int argc, char **argv){
 
     // -----------------------HOUGH CIRCLE DETECTION-------------------------
 
-    // cv::Mat cntMap;
-    // hough::CountMap(bin_image, cntMap, R);
+    cv::Mat cntMap;
+    // hough::CountMap(bin_image, cntMap, 85);
 
-    // cv::Mat cntMap2 = cntMap.clone();
-    // int circle_cnt = hough::NMS_CountMap(circles, cntMap2, R, 100, 0.75);
+    cv::Mat cntMap2 = cntMap.clone();
+    int circle_cnt = hough::NMS_CountMap(circles, cntMap2, 85, 100, 0.75);
 
     hough::HoughCircles(bin_image, R_min, R_max, circles, Step, dtheta);
 
     vector<hough::Circle> circles_NMS = {};
-    circles_NMS = hough::NMS_Circles(circles);
+    circles_NMS = circles;
+    // circles_NMS = hough::NMS_Circles(circles);
 
     cv::Mat show_image = input_image.clone();
 
@@ -85,14 +89,15 @@ int main(int argc, char **argv){
         cir.show(show_image);
     }    
 
-
     cv::imshow("bin", bin_image);
     cv::imshow("circle", show_image);
     // cv::imshow("cntMap", cntMap);
     // cv::imshow("cntMap2", cntMap2);
+    // cv::imwrite("../images/cntMap.jpg", cntMap);
+    cv::imwrite("../images/circles.jpg", show_image);
 
     cv::waitKey(0);
-    cv::imwrite("HoughOut.jpg", show_image);
+    // cv::imwrite("../images/HoughOut.jpg", show_image);
 
     return 0;
 }
