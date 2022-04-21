@@ -66,7 +66,7 @@ cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
     cv::Mat S_edge_image;
     cv::Mat gray_edge_image;
     cv::Canny(hsv_bin[1], S_edge_image, 250, 360);
-    cv::Canny(gray_image, gray_edge_image, 100, 230); 
+    cv::Canny(gray_image, gray_edge_image, 140, 230); 
     // 最后用或运算
     cv::bitwise_or(S_edge_image, gray_edge_image, edge_image);
 

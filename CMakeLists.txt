@@ -43,6 +43,10 @@ add_executable(main_hw4 src/main_hw4.cpp)
 target_link_libraries(main_hw4 Hough
                                 ${OpenCV_LIBS})
 
+add_executable(LabelDetect_main src/LabelDetect_main.cpp)
+target_link_libraries(LabelDetect_main LabelDetection
+                                ${OpenCV_LIBS})
+
 #   图像平滑
 add_library(ImageSmoothing src/ImageSmoothing.cpp)
 target_link_libraries(ImageSmoothing ${OpenCV_LIBS})
@@ -51,4 +55,8 @@ target_link_libraries(ImageSmoothing ${OpenCV_LIBS})
 add_library(Hough src/Hough.cpp)
 target_link_libraries(Hough ${OpenCV_LIBS})
 
+# project: 
+# Label detection
+add_library(LabelDetection src/LabelDetection.cpp)
+target_link_libraries(LabelDetection ${OpenCV_LIBS} ${CERES_LIBRARIES})
 

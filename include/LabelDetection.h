@@ -12,7 +12,13 @@
 #include <vector>
 #include <cmath>
 #include <string>
+#include <algorithm>
+#include <numeric>
 
+
+
+#define MAX_DIST_L 34
+#define MAX_DIST_R 34
 
 // 分别是：缺失，破损，歪斜，完好
 enum label {missing, broken, skewed, intact};
@@ -25,6 +31,11 @@ namespace LabelDetector{
     void drawROIs(const cv::Mat & srcImg, cv::Mat & dstImg, std::vector<cv::Rect> ROIs);
 
     void drawROIs_text(const cv::Mat & srcImg, cv::Mat & dstImg, std::multimap<cv::Rect, label> ROIs_label);
+
+    // 判断是否平直
+    bool isStright();
+    // 判断是否水平
+    bool isConsistent(const std::vector<int> & vec, double stdev_threshold);
 }
 
 
