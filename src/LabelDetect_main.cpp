@@ -70,18 +70,6 @@ cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
     // 最后用或运算
     cv::bitwise_or(S_edge_image, gray_edge_image, edge_image);
 
-
-    // cv::Mat grad_x, grad_y;
-    // cv::Mat abs_grad_x, abs_grad_y;
-    // cv::Sobel(src_gray, grad_x, ddepth, 1, 0, ksize, scale, delta, BORDER_DEFAULT);
-    // cv::Sobel(src_gray, grad_y, ddepth, 0, 1, ksize, scale, delta, BORDER_DEFAULT);
-    // // converting back to CV_8U
-    // cv::convertScaleAbs(grad_x, abs_grad_x);
-    // cv::convertScaleAbs(grad_y, abs_grad_y);
-    // cv::addWeighted(abs_grad_x, 0.5, abs_grad_y, 0.5, 0, grad);
-    // cv::imshow(window_name, grad);
-
-
     if (ifshow){
         // cv::imshow("enhanced_image", enhanced_image); 
         // cv::imshow("gray_image", gray_image);
@@ -91,7 +79,7 @@ cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
         cv::imshow("gray_edge_image", gray_edge_image);
         cv::imshow("edge_image", edge_image);
         // cv::imwrite(filename_write, edge_image);
-        cv::waitKey(0);
+        // cv::waitKey(0);
     }
 
     return edge_image;
@@ -103,7 +91,9 @@ int main(int argc, char **argv){
     // read input file
     cv::Mat input_image;
 
-    string filename = argv[1];
+    string dir = "../images/";
+    string postfix = ".jpg";
+    string filename = dir + argv[1] + postfix;
 
     // 读入图像格式？
     input_image = cv::imread(filename, 1);
@@ -114,7 +104,7 @@ int main(int argc, char **argv){
     }
 
     cv::Mat edge_image;
-    edge_image = Preprocess(input_image, 1);
+    edge_image = Preprocess(input_image, 0);
 
     int height = edge_image.rows;
     int width = edge_image.cols;
@@ -129,7 +119,7 @@ int main(int argc, char **argv){
     int dx{3};
     int dy{3};
     for (int i = 0; i < 5; i++){
-        ROIs.push_back(cv::Rect(width/5 * (i) + dx, height/2 + dy, width/5 - dx,height/2 - dy*2));
+        ROIs.push_back(cv::Rect(width/5 * (i) + dx, height/2 + dy, width/5 - dx,height/2 - dy*3));
     }
 
     LabelDetector::label_detect(edge_image, ROIs);
@@ -149,12 +139,11 @@ int main(int argc, char **argv){
     //     cv::line(output_image, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]), cv::Scalar(0, 255, 255), 1, cv::LINE_AA);
     // }
 
-
-
     // SHOW IMAGES
     cv::imshow("input", input_image);
     cv::imshow("output", output_image);
     cv::imshow("edge", edge_image);
+    cv::imwrite(dir + argv[1] + "_edge" + postfix, edge_image);
 
     // cout << edge_image << endl;
 

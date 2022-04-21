@@ -25,6 +25,7 @@ namespace LabelDetector{
 
         int cnt = 0;
 
+        // check if exist
         for (int i = 60; i < 90; i++){
             cnt += cv::sum(M_ROI.row(i))[0]/255;
             // std::cout << i << "  " << cv::sum(M_ROI.row(i))[0]/255 << std::endl;
@@ -33,6 +34,83 @@ namespace LabelDetector{
             std::cout << "missing" << std::endl;
             return missing;
         }
+
+        // check skewed or broken
+        // 瓶体左边缘、右边缘
+        std::vector<int> bottle_left, bottle_right;
+        // 标签左边缘、右边缘
+        std::vector<int> sticker_left, sticker_right;
+        // 瓶体与标签边缘, 左距离、右距离
+        std::vector<int> dist_left, dist_right;
+
+        bool left_found;
+        bool right_found;
+        int left_j = 0;
+        int right_j = cols_ROI;
+        for (int i = 40; i < 90; i++) {
+            left_found = false;
+            right_found = false;
+            
+            for (int j = 0; j < MAX_DIST_L; j++) {
+                if (left_found == false) {
+                    if (M_ROI.at<uchar>(i, j) > 0) {
+                        left_j = j;
+                        bottle_left.push_back(j);
+                        left_found = true;
+                        std::cout << "L  " << j << " , ";
+                        continue;
+                    }
+                }
+                else {
+                    std::cout << ". ";
+                    if (M_ROI.at<uchar>(i, j) > 0) {
+                        sticker_left.push_back(j);
+                        std::cout << j << std::endl;
+                        left_found = false;
+                        break;
+                    }
+                    if (j == MAX_DIST_L - 1) {
+                        sticker_left.push_back(left_j);
+                        std::cout << left_j << std::endl;
+                        left_found = false;
+                        break;
+                    }
+                }
+            }
+            for (int j = cols_ROI; j > cols_ROI - MAX_DIST_R; j--) {
+                if (right_found == false) {
+                    if (M_ROI.at<uchar>(i, j) > 0) {
+                        right_j = j;
+                        bottle_right.push_back(j);
+                        right_found = true;
+                        std::cout << "R  " << j << " , ";
+                        continue;
+                    }
+                }
+                else {
+                    // 可能的原因, 循环从ROI边界开始,找不到
+                    // 应该从瓶子边界开始
+                    std::cout << j << ". ";
+                    if (M_ROI.at<uchar>(i, j) > 0) {
+                        sticker_right.push_back(j);
+                        right_found = false;
+                        std::cout << j << std::endl;
+                        break;
+                    }
+                    if (j == cols_ROI - MAX_DIST_R + 1){
+                        sticker_right.push_back(right_j);
+                        right_found = false;
+                        // std::cout << right_j << std::endl;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // std::cout << bottle_left.size() << std::endl;
+        // std::cout << bottle_right.size() << std::endl;
+        // std::cout << sticker_left.size() << std::endl;
+        // std::cout << sticker_right.size() << std::endl;
         std::cout << "intact" << std::endl;
         return intact;
     }
