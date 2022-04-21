@@ -1,5 +1,6 @@
 #include "LabelDetection.h"
 #include <chrono>
+#include <string>
 
 
 using namespace std;    
@@ -22,23 +23,38 @@ cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
     cv::Mat blur_image;
     cv::GaussianBlur(input_image, blur_image, cv::Size(7,7), 0, 0);
 
-    cv::imshow("blur_image", blur_image);
+    // cv::imshow("blur_image", blur_image);
 
     // binary
-    cv::Mat bin_image;
-    cv::threshold(input_image, bin_image, 45, 255, cv::THRESH_TOZERO);
-    cv::imshow("bin_image", bin_image);
+    // cv::Mat bin_image;
+    // cv::threshold(input_image, bin_image, 45, 255, cv::THRESH_TOZERO);
+    // cv::imshow("bin_image", bin_image);
+
 
     cv::Mat hsv_image;
-    cv::cvtColor(bin_image, hsv_image, cv::COLOR_RGB2HSV);
+    cv::cvtColor(blur_image, hsv_image, cv::COLOR_RGB2HSV);
 
     std::vector<cv::Mat> HSV;
     cv::split(hsv_image, HSV);
     // cv::imshow("V", HSV[0]);
-    cv::imshow("S", HSV[1]);
+    // cv::imshow("S", HSV[1]);
     // cv::imshow("H", HSV[2]);
+    // cout << (HSV[2]) << endl;
 
-    cv::waitKey(0);
+    // binary in HSV
+    cv::Mat HSV_bin_image;
+    cv::Mat hsv_bin[3], hsv_binL[3], hsv_binU[3];    
+    // cv::threshold(HSV[0], hsv_binL[0], 5, 255, cv::THRESH_BINARY);
+    // cv::threshold(HSV[0], hsv_binU[0], 74, 255, cv::THRESH_BINARY_INV);
+    // cv::bitwise_and(hsv_binL[0], hsv_binU[0], hsv_bin[0]);
+    // cv::imshow("V", hsv_bin[0]);
+    cv::threshold(HSV[1], hsv_bin[1], 159, 255, cv::THRESH_BINARY_INV);
+    // cv::imshow("S", hsv_bin[1]);
+    // 注意H分量 0-180
+    // cv::threshold(HSV[2], hsv_bin[2], 250, 255, cv::THRESH_BINARY_INV);
+    // cv::imshow("H", hsv_bin[2]);
+    // cv::merge(hsv_bin, 3, HSV_bin_image);
+    // cv::imshow("HSV_bin", HSV_bin_image);
 
     cv::Mat gray_image;
     cv::cvtColor(input_image, gray_image, cv::COLOR_BGR2GRAY);
@@ -49,7 +65,7 @@ cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
     // S通道
     cv::Mat S_edge_image;
     cv::Mat gray_edge_image;
-    cv::Canny(HSV[1], S_edge_image, 250, 360);
+    cv::Canny(hsv_bin[1], S_edge_image, 250, 360);
     cv::Canny(gray_image, gray_edge_image, 100, 230); 
     // 最后用或运算
     cv::bitwise_or(S_edge_image, gray_edge_image, edge_image);
@@ -68,13 +84,13 @@ cv::Mat Preprocess(const cv::Mat & input_image, bool ifshow){
 
     if (ifshow){
         // cv::imshow("enhanced_image", enhanced_image); 
-        cv::imshow("gray_image", gray_image);
+        // cv::imshow("gray_image", gray_image);
         // cv::imwrite("../images/gray.jpg", gray);
         // cv::imshow("blur", blur_image);
         cv::imshow("S_edge_image", S_edge_image);
         cv::imshow("gray_edge_image", gray_edge_image);
         cv::imshow("edge_image", edge_image);
-        // cv::imwrite("../images/edge_image.jpg", edge_image);
+        // cv::imwrite(filename_write, edge_image);
         cv::waitKey(0);
     }
 
